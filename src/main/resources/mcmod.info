@@ -1,0 +1,20 @@
+[
+  {
+    "modid": "ancientchina",
+    "name": "Ancient China(Core)",
+    "description": "A mod dedicated to creating a beautiful ancient Chinese scene\n\n.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "cyciling",
+      "ajacker",
+      "Jakob.zero"
+    ],
+    "credits": "lin jian tian, cat",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
