@@ -15,7 +15,7 @@ public class CreativeTabsLoader {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            return new ItemStack(BlockLoader.NYA_ORE);
+            return new ItemStack(ItemLoader.NYA_APPLE);
         }
     });
     public static final CreativeTabs TAB_AC_CORE_BLOCK = (new TabCore("tab_block") {
