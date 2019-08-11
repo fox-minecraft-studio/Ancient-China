@@ -1,0 +1,4 @@
+itemGroup.tab_item=AncientChina(Core) Item
+itemGroup.tab_block=AncientChina(Core) Block
+item.nya_apple.name=Test Item
+tile.nya_ore.name=Test Block

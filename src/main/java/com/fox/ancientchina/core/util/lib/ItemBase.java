@@ -1,5 +1,7 @@
 package com.fox.ancientchina.core.util.lib;
 
+import com.fox.ancientchina.core.AncientChina;
+import com.fox.ancientchina.core.util.IModelRegister;
 import com.fox.ancientchina.core.util.loader.CreativeTabsLoader;
 import com.fox.ancientchina.core.util.loader.ItemLoader;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -15,9 +17,9 @@ import static com.fox.ancientchina.core.AncientChina.MODID;
 /**
  * @author ajacker
  */
-public class ItemMod extends Item {
+public class ItemBase extends Item implements IModelRegister {
 
-    public ItemMod(String name) {
+    public ItemBase(String name) {
         setUnlocalizedName(name);
         setRegistryName(name);
         setHasSubtypes(true);
@@ -25,9 +27,8 @@ public class ItemMod extends Item {
         ItemLoader.ITEMS.add(this);
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
     public void registerModels() {
-        ModelLoader.setCustomModelResourceLocation(this,
-                0, new ModelResourceLocation(Objects.requireNonNull(this.getRegistryName()), "inventory"));
+        AncientChina.proxy.registerModel(this,0,"inventory");
     }
 }

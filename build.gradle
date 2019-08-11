@@ -75,3 +75,13 @@ processResources {
         exclude 'mcmod.info'
     }
 }
+// try to solve some questions
+idea{module{inheritOutputDirs = true}}
+// you can set username with gradle argument -PappArgs="['--username=player']" to set you name
+// like this: gradlew runClient -PappArgs="['--username=player']"
+runClient {
+    if (project.hasProperty("appArgs")) {
+        args Eval.me(appArgs)
+    }
+}
+

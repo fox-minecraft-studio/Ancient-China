@@ -1,5 +1,7 @@
 package com.fox.ancientchina.core.util.lib;
 
+import com.fox.ancientchina.core.AncientChina;
+import com.fox.ancientchina.core.util.IModelRegister;
 import com.fox.ancientchina.core.util.loader.BlockLoader;
 import com.fox.ancientchina.core.util.loader.CreativeTabsLoader;
 import com.fox.ancientchina.core.util.loader.ItemLoader;
@@ -19,8 +21,8 @@ import static com.fox.ancientchina.core.AncientChina.MODID;
 /**
  * @author ajacker
  */
-public class BlockMod extends Block {
-    public BlockMod(String name, Material materialIn) {
+public class BlockBase extends Block implements IModelRegister {
+    public BlockBase(String name, Material materialIn) {
         super(materialIn);
         setUnlocalizedName(name);
         setRegistryName(name);
@@ -30,9 +32,8 @@ public class BlockMod extends Block {
         ItemLoader.ITEMS.add(new ItemBlock(this).setRegistryName(name));
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
     public void registerModels() {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this),
-                0, new ModelResourceLocation(Objects.requireNonNull(this.getRegistryName()), "inventory"));
+        AncientChina.proxy.registerModel(Item.getItemFromBlock(this),0,"inventory");
     }
 }

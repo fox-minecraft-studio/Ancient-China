@@ -4,9 +4,9 @@ package com.fox.ancientchina.core.util;
 /**
  * @author ajacker
  */
-public interface ModelLoader {
+public interface IModelRegister {
     /**
      * register the models, this method is client only
      */
-    public void registerModels();
+    void registerModels();
 }
