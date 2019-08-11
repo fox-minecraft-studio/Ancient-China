@@ -24,7 +24,7 @@ import static com.fox.ancientchina.core.AncientChina.MODID;
 public class BlockBase extends Block implements IModelRegister {
     public BlockBase(String name, Material materialIn) {
         super(materialIn);
-        setUnlocalizedName(name);
+        setUnlocalizedName(MODID + "." + name);
         setRegistryName(name);
         setCreativeTab(CreativeTabsLoader.TAB_AC_CORE_BLOCK);
 

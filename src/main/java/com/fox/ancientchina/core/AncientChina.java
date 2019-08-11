@@ -2,6 +2,7 @@ package com.fox.ancientchina.core;
 
 import com.fox.ancientchina.core.common.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -16,6 +17,10 @@ public class AncientChina {
     public static final String MODID = "ancientchina";
     public static final String NAME = "Ancient China(Core)";
     public static final String VERSION = "0.0.1";
+
+    @Instance(MODID)
+    public static AncientChina INSTANCE;
+
     @SidedProxy(clientSide = "com.fox.ancientchina.core.client.ClientProxy",
             serverSide = "com.fox.ancientchina.core.common.CommonProxy")
     public static CommonProxy proxy;

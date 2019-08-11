@@ -20,7 +20,7 @@ import static com.fox.ancientchina.core.AncientChina.MODID;
 public class ItemBase extends Item implements IModelRegister {
 
     public ItemBase(String name) {
-        setUnlocalizedName(name);
+        setUnlocalizedName(MODID + "." + name);
         setRegistryName(name);
         setHasSubtypes(true);
         setCreativeTab(CreativeTabsLoader.TAB_AC_CORE_ITEM);
