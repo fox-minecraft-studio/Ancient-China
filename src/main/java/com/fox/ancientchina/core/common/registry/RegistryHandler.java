@@ -1,7 +1,8 @@
 package com.fox.ancientchina.core.common.registry;
 
-import com.fox.ancientchina.core.util.lib.BlockMod;
-import com.fox.ancientchina.core.util.lib.ItemMod;
+import com.fox.ancientchina.core.util.IModelRegister;
+import com.fox.ancientchina.core.util.lib.BlockBase;
+import com.fox.ancientchina.core.util.lib.ItemBase;
 import com.fox.ancientchina.core.util.loader.BlockLoader;
 import com.fox.ancientchina.core.util.loader.ItemLoader;
 import net.minecraft.block.Block;
@@ -31,14 +32,15 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void onModelRegister(ModelRegistryEvent event) {
         for (Item item : ItemLoader.ITEMS) {
-            if (item instanceof ItemMod) {
-                ((ItemMod) item).registerModels();
+            if (item instanceof IModelRegister) {
+                System.out.println(item.getUnlocalizedName());
+                ((IModelRegister) item).registerModels();
             }
         }
 
         for (Block block : BlockLoader.BLOCKS) {
-            if (block instanceof BlockMod) {
-                ((BlockMod) block).registerModels();
+            if (block instanceof IModelRegister) {
+                ((IModelRegister) block).registerModels();
             }
         }
 
