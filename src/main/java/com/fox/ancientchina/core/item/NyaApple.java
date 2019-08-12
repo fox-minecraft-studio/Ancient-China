@@ -1,4 +1,4 @@
-package com.fox.ancientchina.core.common.item;
+package com.fox.ancientchina.core.item;
 
 import com.fox.ancientchina.core.util.lib.ItemBase;
 

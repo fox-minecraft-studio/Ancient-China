@@ -1,10 +1,13 @@
-package com.fox.ancientchina.core.client.tab;
+package com.fox.ancientchina.core.util.lib;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+/**
+ * @author ajacker
+ */
 public class TabCore extends CreativeTabs {
 
     private ItemStack iconItemStack;

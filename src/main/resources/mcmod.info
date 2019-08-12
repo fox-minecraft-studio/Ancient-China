@@ -1,6 +1,6 @@
 [
   {
-    "modid": "ancientchina",
+    "modid": "ancientchina-core",
     "name": "Ancient China(Core)",
     "description": "A mod dedicated to creating a beautiful ancient Chinese scene\n\n.",
     "version": "${version}",

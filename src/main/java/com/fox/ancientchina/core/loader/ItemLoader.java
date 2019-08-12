@@ -1,6 +1,6 @@
-package com.fox.ancientchina.core.util.loader;
+package com.fox.ancientchina.core.loader;
 
-import com.fox.ancientchina.core.common.item.NyaApple;
+import com.fox.ancientchina.core.item.NyaApple;
 import net.minecraft.item.Item;
 
 import java.util.ArrayList;
