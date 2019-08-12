@@ -1,4 +1,4 @@
-package com.fox.ancientchina.core.common;
+package com.fox.ancientchina.core.proxy;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

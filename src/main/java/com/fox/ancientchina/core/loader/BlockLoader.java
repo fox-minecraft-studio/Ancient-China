@@ -1,6 +1,6 @@
-package com.fox.ancientchina.core.util.loader;
+package com.fox.ancientchina.core.loader;
 
-import com.fox.ancientchina.core.common.block.NyaOre;
+import com.fox.ancientchina.core.block.NyaOre;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
