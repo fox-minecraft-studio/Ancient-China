@@ -1,6 +1,7 @@
 package com.fox.ancientchina.cof.util.handler;
 
 import com.fox.ancientchina.cof.loader.BlockLoader;
+import com.fox.ancientchina.cof.loader.EntityLoader;
 import com.fox.ancientchina.cof.loader.ItemLoader;
 import com.fox.ancientchina.core.util.IModelRegister;
 import net.minecraft.block.Block;
@@ -9,6 +10,7 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
 
 import static com.fox.ancientchina.cof.AncientChina_COF.MODID;
 
@@ -28,6 +30,10 @@ public class RegistryHandler {
         event.getRegistry().registerAll(BlockLoader.BLOCKS.toArray(new Block[0]));
     }
 
+    @SubscribeEvent
+    public static void onEntityRegister(RegistryEvent.Register<EntityEntry> event) {
+        event.getRegistry().register(EntityLoader.DEADLY_COIN);
+    }
     @SubscribeEvent
     public static void onModelRegister(ModelRegistryEvent event) {
         for (Item item : ItemLoader.ITEMS) {
