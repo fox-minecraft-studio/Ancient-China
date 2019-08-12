@@ -1,18 +1,12 @@
 package com.fox.ancientchina.core.util.lib;
 
-import com.fox.ancientchina.core.AncientChina;
+import com.fox.ancientchina.core.AncientChina_Core;
 import com.fox.ancientchina.core.util.IModelRegister;
-import com.fox.ancientchina.core.util.loader.CreativeTabsLoader;
-import com.fox.ancientchina.core.util.loader.ItemLoader;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import com.fox.ancientchina.core.loader.CreativeTabsLoader;
+import com.fox.ancientchina.core.loader.ItemLoader;
 import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.Objects;
-
-import static com.fox.ancientchina.core.AncientChina.MODID;
+import static com.fox.ancientchina.core.AncientChina_Core.MODID;
 
 /**
  * @author ajacker
@@ -20,7 +14,7 @@ import static com.fox.ancientchina.core.AncientChina.MODID;
 public class ItemBase extends Item implements IModelRegister {
 
     public ItemBase(String name) {
-        setUnlocalizedName(name);
+        setUnlocalizedName(MODID + "." + name);
         setRegistryName(name);
         setHasSubtypes(true);
         setCreativeTab(CreativeTabsLoader.TAB_AC_CORE_ITEM);
@@ -29,6 +23,6 @@ public class ItemBase extends Item implements IModelRegister {
 
     @Override
     public void registerModels() {
-        AncientChina.proxy.registerModel(this,0,"inventory");
+        AncientChina_Core.proxy.registerModel(this, 0, "inventory");
     }
 }

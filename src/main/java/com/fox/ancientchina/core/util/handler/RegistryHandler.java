@@ -1,10 +1,8 @@
-package com.fox.ancientchina.core.common.registry;
+package com.fox.ancientchina.core.util.handler;
 
 import com.fox.ancientchina.core.util.IModelRegister;
-import com.fox.ancientchina.core.util.lib.BlockBase;
-import com.fox.ancientchina.core.util.lib.ItemBase;
-import com.fox.ancientchina.core.util.loader.BlockLoader;
-import com.fox.ancientchina.core.util.loader.ItemLoader;
+import com.fox.ancientchina.core.loader.BlockLoader;
+import com.fox.ancientchina.core.loader.ItemLoader;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -12,7 +10,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import static com.fox.ancientchina.core.AncientChina.MODID;
+import static com.fox.ancientchina.core.AncientChina_Core.MODID;
 
 /**
  * @author ajacker

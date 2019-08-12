@@ -1,6 +1,6 @@
 package com.fox.ancientchina.core;
 
-import com.fox.ancientchina.core.common.CommonProxy;
+import com.fox.ancientchina.core.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -11,13 +11,13 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 /**
  * @author ajacker
  */
-@Mod(modid = AncientChina.MODID, name = AncientChina.NAME, version = AncientChina.VERSION)
-public class AncientChina {
-    public static final String MODID = "ancientchina";
+@Mod(modid = AncientChina_Core.MODID, name = AncientChina_Core.NAME, version = AncientChina_Core.VERSION)
+public class AncientChina_Core {
+    public static final String MODID = "ancientchina-core";
     public static final String NAME = "Ancient China(Core)";
     public static final String VERSION = "0.0.1";
-    @SidedProxy(clientSide = "com.fox.ancientchina.core.client.ClientProxy",
-            serverSide = "com.fox.ancientchina.core.common.CommonProxy")
+    @SidedProxy(clientSide = "com.fox.ancientchina.core.proxy.ClientProxy",
+            serverSide = "com.fox.ancientchina.core.proxy.CommonProxy")
     public static CommonProxy proxy;
 
     @EventHandler

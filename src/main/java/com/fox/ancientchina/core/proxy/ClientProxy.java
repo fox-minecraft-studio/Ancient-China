@@ -1,6 +1,6 @@
-package com.fox.ancientchina.core.client;
+package com.fox.ancientchina.core.proxy;
 
-import com.fox.ancientchina.core.common.CommonProxy;
+import com.fox.ancientchina.core.proxy.CommonProxy;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
