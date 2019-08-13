@@ -2,3 +2,5 @@ itemGroup.ancientchina-core.tab_item=华夏画卷(Core) 物品
 itemGroup.ancientchina-core.tab_block=华夏画卷(Core) 方块
 item.ancientchina-core.nya_apple.name=测试物品
 tile.ancientchina-core.nya_ore.name=测试方块
+
+tile.ancientchina-core.copper_ore.name=铜矿

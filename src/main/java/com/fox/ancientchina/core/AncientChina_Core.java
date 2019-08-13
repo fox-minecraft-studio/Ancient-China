@@ -1,7 +1,10 @@
 package com.fox.ancientchina.core;
 
 import com.fox.ancientchina.core.proxy.CommonProxy;
+import com.fox.ancientchina.core.util.handler.WorldGenOreHandler;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -16,8 +19,14 @@ public class AncientChina_Core {
     public static final String MODID = "ancientchina-core";
     public static final String NAME = "Ancient China(Core)";
     public static final String VERSION = "0.0.1";
+
+
+    @Instance(MODID)
+    public static AncientChina_Core INSTANCE;
+
     @SidedProxy(clientSide = "com.fox.ancientchina.core.proxy.ClientProxy",
             serverSide = "com.fox.ancientchina.core.proxy.CommonProxy")
+
     public static CommonProxy proxy;
 
     @EventHandler
@@ -28,6 +37,7 @@ public class AncientChina_Core {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+        MinecraftForge.ORE_GEN_BUS.register(WorldGenOreHandler.class);
     }
 
     @EventHandler
