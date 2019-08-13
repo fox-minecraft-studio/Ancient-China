@@ -37,6 +37,7 @@ public class AncientChina_Core {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+        MinecraftForge.ORE_GEN_BUS.register(WorldGenOreHandler.class);
     }
 
     @EventHandler
