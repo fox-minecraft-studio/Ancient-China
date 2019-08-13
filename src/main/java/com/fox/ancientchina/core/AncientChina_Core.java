@@ -1,6 +1,8 @@
 package com.fox.ancientchina.core;
 
 import com.fox.ancientchina.core.proxy.CommonProxy;
+import com.fox.ancientchina.core.util.handler.WorldGenOreHandler;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.Mod.EventHandler;

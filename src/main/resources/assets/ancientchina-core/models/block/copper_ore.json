@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "ancientchina-core:blocks/copper_ore"
+  }
+}
