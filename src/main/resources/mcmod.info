@@ -1,9 +1,9 @@
 [
   {
-    "modid": "ancientchina-core",
+    "modid": "ancientchina",
     "name": "Ancient China(Core)",
     "description": "A mod dedicated to creating a beautiful ancient Chinese scene\n\n.",
-    "version": "@version@",
+    "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "",
     "updateUrl": "",
@@ -11,22 +11,6 @@
       "cyciling",
       "ajacker",
       "Jakob.zero"
-    ],
-    "credits": "lin jian tian, cat",
-    "logoFile": "",
-    "screenshots": [],
-    "dependencies": []
-  },
-  {
-    "modid": "ancientchina-cof",
-    "name": "Ancient China(Change Of Fire)",
-    "description": "The change of fire!The amazing world!.",
-    "version": "${version}",
-    "mcversion": "${mcversion}",
-    "url": "",
-    "updateUrl": "",
-    "authorList": [
-      "ajacker"
     ],
     "credits": "lin jian tian, cat",
     "logoFile": "",

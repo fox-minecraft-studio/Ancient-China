@@ -7,7 +7,6 @@ bin
 .project
 
 # idea
-.idea
 out
 *.ipr
 *.iws
