@@ -1,9 +1,11 @@
 package com.fox.ancientchina.core.proxy;
 
+import com.fox.ancientchina.core.wolrd.OreGen;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * @author ajacker
@@ -15,7 +17,7 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent event) {
-
+        GameRegistry.registerWorldGenerator(new OreGen(),0);
     }
 
     public void postInit(FMLPostInitializationEvent event) {
