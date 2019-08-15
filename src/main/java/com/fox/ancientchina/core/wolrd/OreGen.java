@@ -9,6 +9,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -21,6 +22,10 @@ import java.util.Random;
  * @author yaesey
  */
 public class OreGen implements IWorldGenerator {
+    public OreGen(){
+        MinecraftForge.ORE_GEN_BUS.register(this);
+    }
+
     /**
      * @param random         随机值
      * @param chunkX         矿物生成区块X坐标
@@ -45,10 +50,13 @@ public class OreGen implements IWorldGenerator {
      */
     @SubscribeEvent
     public void onOreGen(OreGenEvent.GenerateMinable event){
-        if (event.getType() == OreGenEvent.GenerateMinable.EventType.COAL){
-            genOreHelper(BlockLoader.NYA_ORE.getDefaultState(),event.getWorld(),event.getRand(),
-                    event.getPos().getX(),event.getPos().getZ(),0,128,23,4);
+        //fixme:It is a test,We should delete these codes when we build and release the mod
+        //fixme:这是一个测试，当我们构建并发布mod时，我们应该删除这些代码
+        if (event.getType() != OreGenEvent.GenerateMinable.EventType.GRANITE){
+            return;
         }
+        genOreHelper(BlockLoader.NYA_ORE.getDefaultState(),event.getWorld(),event.getRand(),
+                event.getPos().getX(),event.getPos().getZ(),0,128,23,4);
     }
 
     /**
@@ -73,6 +81,10 @@ public class OreGen implements IWorldGenerator {
 
         for (int i = 0;i < chances;i++){
             //注意，这里的16是防止重复加载区块而设定的值
+            //
+            //fixme:2019.8.15：我们在测试的时候，仍然发现 Forge 的“世界生成延迟”这一警告
+            // 我认为这是一个值得注意的事情，但我对优化代码很不在行，所以请诸位帮我优化这个代码
+            // 另：当解决这个问题时，请删除这一注释 by yaesey
             int posX = x + random.nextInt(16);
             int posY = minY + random.nextInt(domain);
             int posZ = z + random.nextInt(16);
