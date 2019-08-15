@@ -12,7 +12,7 @@ A mod dedicated to creating a beautiful ancient Chinese scene
 2. `./gradlew genIntellijRuns`
 3. open the Ancient-China.ipr file as a idea project
 
-* For eclipse
+* For eclipse  
 `./gradlew eclipse`
 
 
