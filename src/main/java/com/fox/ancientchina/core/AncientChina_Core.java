@@ -40,7 +40,6 @@ public class AncientChina_Core {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
-
     }
 
     @EventHandler

@@ -1,5 +1,6 @@
 package com.fox.ancientchina.core.item;
 
+import com.fox.ancientchina.core.AncientChina_Core;
 import com.fox.ancientchina.core.util.lib.ItemBase;
 
 
@@ -9,6 +10,6 @@ import com.fox.ancientchina.core.util.lib.ItemBase;
  */
 public class NyaApple extends ItemBase {
     public NyaApple(String name) {
-        super(name);
+        super(AncientChina_Core.MODID,name);
     }
 }
