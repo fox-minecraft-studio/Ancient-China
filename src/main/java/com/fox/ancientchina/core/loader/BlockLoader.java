@@ -15,5 +15,9 @@ import java.util.List;
 public class BlockLoader {
     public static final List<Block> BLOCKS = new ArrayList<>();
     public static final Block NYA_ORE = new NyaOre("nya_ore", Material.GOURD);
+
     public static final Block COPPER_ORE = new BlockOre("copper_ore",Material.ROCK);
+    public static final Block LEAD_ORE = new BlockOre("lead_ore",Material.ROCK);
+    public static final Block ZINC_ORE = new BlockOre("zinc_ore",Material.ROCK);
+    public static final Block TIN_ORE = new BlockOre("tin_ore",Material.ROCK);
 }
