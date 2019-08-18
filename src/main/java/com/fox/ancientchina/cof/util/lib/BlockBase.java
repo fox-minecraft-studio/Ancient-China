@@ -1,6 +1,6 @@
 package com.fox.ancientchina.cof.util.lib;
 
-import com.fox.ancientchina.cof.AncientChina_COF;
+import com.fox.ancientchina.cof.AncientChinaCOF;
 import com.fox.ancientchina.cof.loader.BlockLoader;
 import com.fox.ancientchina.cof.loader.CreativeTabsLoader;
 import com.fox.ancientchina.cof.loader.ItemLoader;
@@ -10,7 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 
-import static com.fox.ancientchina.cof.AncientChina_COF.MODID;
+import static com.fox.ancientchina.cof.AncientChinaCOF.MODID;
 
 /**
  * @author ajacker
@@ -28,6 +28,6 @@ public class BlockBase extends Block implements IModelRegister {
 
     @Override
     public void registerModels() {
-        AncientChina_COF.proxy.registerModel(Item.getItemFromBlock(this), 0, "inventory");
+        AncientChinaCOF.proxy.registerModel(Item.getItemFromBlock(this), 0, "inventory");
     }
 }

@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
 
 
-import static com.fox.ancientchina.cof.AncientChina_COF.MODID;
+import static com.fox.ancientchina.cof.AncientChinaCOF.MODID;
 
 /**
  * @author ajacker

@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import static com.fox.ancientchina.cof.AncientChina_COF.MODID;
+import static com.fox.ancientchina.cof.AncientChinaCOF.MODID;
 
 /**
  * @author ajacker

@@ -1,6 +1,6 @@
 package com.fox.ancientchina.core.util.lib;
 
-import com.fox.ancientchina.core.AncientChina_Core;
+import com.fox.ancientchina.core.AncientChinaCore;
 import com.fox.ancientchina.core.util.IModelRegister;
 import com.fox.ancientchina.core.loader.BlockLoader;
 import com.fox.ancientchina.core.loader.CreativeTabsLoader;
@@ -10,15 +10,13 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 
-import static com.fox.ancientchina.core.AncientChina_Core.MODID;
-
 /**
  * @author ajacker
  */
 public class BlockBase extends Block implements IModelRegister {
-    public BlockBase(String name, Material materialIn) {
+    public BlockBase(String modid,String name, Material materialIn) {
         super(materialIn);
-        setUnlocalizedName(MODID + "." + name);
+        setUnlocalizedName(modid + "." + name);
         setRegistryName(name);
         setCreativeTab(CreativeTabsLoader.TAB_AC_CORE_BLOCK);
 
@@ -28,6 +26,6 @@ public class BlockBase extends Block implements IModelRegister {
 
     @Override
     public void registerModels() {
-        AncientChina_Core.proxy.registerModel(Item.getItemFromBlock(this), 0, "inventory");
+        AncientChinaCore.proxy.registerModel(Item.getItemFromBlock(this), 0, "inventory");
     }
 }
