@@ -32,5 +32,21 @@
     "logoFile": "",
     "screenshots": [],
     "dependencies": []
+  },
+  {
+    "modid": "ancientchinatensei",
+    "name": "Ancient China Tensei",
+    "description": "Tensei. weird stuff.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "cyciling"
+    ],
+    "credits": "cat",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
   }
 ]

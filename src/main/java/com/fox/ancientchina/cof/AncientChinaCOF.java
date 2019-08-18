@@ -18,22 +18,26 @@ public class AncientChinaCOF
     public static final String MODID = "ancientchinacof";
     public static final String NAME = "Ancient China(Change Of Fire)";
     public static final String VERSION = "0.0.1";
+
     @SidedProxy(clientSide = "com.fox.ancientchina.cof.proxy.ClientProxy",
             serverSide = "com.fox.ancientchina.cof.proxy.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
+    public void preInit(FMLPreInitializationEvent event)
+    {
         proxy.preInit(event);
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
+    public void init(FMLInitializationEvent event)
+    {
         proxy.init(event);
     }
 
     @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
+    public void postInit(FMLPostInitializationEvent event)
+    {
         proxy.postInit(event);
     }
 }
