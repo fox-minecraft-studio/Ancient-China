@@ -10,21 +10,26 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 /**
  * @author ajacker
  */
-public class CommonProxy {
+public class CommonProxy
+{
 
-    public void preInit(FMLPreInitializationEvent event) {
+    public void preInit(FMLPreInitializationEvent event)
+    {
 
     }
 
-    public void init(FMLInitializationEvent event) {
+    public void init(FMLInitializationEvent event)
+    {
         GameRegistry.registerWorldGenerator(new OreGen(),3);
     }
 
-    public void postInit(FMLPostInitializationEvent event) {
+    public void postInit(FMLPostInitializationEvent event)
+    {
 
     }
 
-    public void registerModel(Item item,int meta,String variantln){
+    public void registerModel(Item item,int meta,String variantln)
+    {
 
     }
 }

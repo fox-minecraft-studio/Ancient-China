@@ -10,11 +10,12 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 /**
  * @author ajacker
  */
-@Mod(modid = AncientChina_COF.MODID, name = AncientChina_COF.NAME, version = AncientChina_COF.VERSION,
-        dependencies = "required-after:ancientchina-core@[0.0.1,);")
+@Mod(modid = AncientChinaCOF.MODID, name = AncientChinaCOF.NAME, version = AncientChinaCOF.VERSION,
+        dependencies = "required-after:ancientchinacore@[0.0.1,);")
 
-public class AncientChina_COF {
-    public static final String MODID = "ancientchina-cof";
+public class AncientChinaCOF
+{
+    public static final String MODID = "ancientchinacof";
     public static final String NAME = "Ancient China(Change Of Fire)";
     public static final String VERSION = "0.0.1";
     @SidedProxy(clientSide = "com.fox.ancientchina.cof.proxy.ClientProxy",

@@ -1,8 +1,6 @@
 package com.fox.ancientchina.core;
 
 import com.fox.ancientchina.core.proxy.CommonProxy;
-import com.fox.ancientchina.core.wolrd.OreGen;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -15,14 +13,15 @@ import org.apache.logging.log4j.Logger;
 /**
  * @author ajacker
  */
-@Mod(modid = AncientChina_Core.MODID, name = AncientChina_Core.NAME, version = AncientChina_Core.VERSION)
-public class AncientChina_Core {
-    public static final String MODID = "ancientchina-core";
+@Mod(modid = AncientChinaCore.MODID, name = AncientChinaCore.NAME, version = AncientChinaCore.VERSION)
+public class AncientChinaCore
+{
+    public static final String MODID = "ancientchinacore";
     public static final String NAME = "Ancient China(Core)";
     public static final String VERSION = "0.0.1";
 
     @Instance(MODID)
-    public static AncientChina_Core INSTANCE;
+    public static AncientChinaCore INSTANCE;
 
     @SidedProxy(clientSide = "com.fox.ancientchina.core.proxy.ClientProxy",
             serverSide = "com.fox.ancientchina.core.proxy.CommonProxy")

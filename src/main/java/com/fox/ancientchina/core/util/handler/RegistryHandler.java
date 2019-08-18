@@ -10,7 +10,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import static com.fox.ancientchina.core.AncientChina_Core.MODID;
+import static com.fox.ancientchina.core.AncientChinaCore.MODID;
 
 /**
  * @author ajacker

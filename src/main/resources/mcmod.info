@@ -1,6 +1,6 @@
 [
   {
-    "modid": "ancientchina-core",
+    "modid": "ancientchinacore",
     "name": "Ancient China(Core)",
     "description": "A mod dedicated to creating a beautiful ancient Chinese scene\n\n.",
     "version": "@version@",
@@ -18,7 +18,7 @@
     "dependencies": []
   },
   {
-    "modid": "ancientchina-cof",
+    "modid": "ancientchinacof",
     "name": "Ancient China(Change Of Fire)",
     "description": "The change of fire!The amazing world!.",
     "version": "${version}",
