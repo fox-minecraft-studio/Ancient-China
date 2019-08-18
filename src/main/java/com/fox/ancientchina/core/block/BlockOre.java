@@ -1,6 +1,6 @@
 package com.fox.ancientchina.core.block;
 
-import com.fox.ancientchina.core.AncientChina_Core;
+import com.fox.ancientchina.core.AncientChinaCore;
 import com.fox.ancientchina.core.util.lib.BlockBase;
 import net.minecraft.block.material.Material;
 
@@ -10,7 +10,7 @@ import net.minecraft.block.material.Material;
  */
 public class BlockOre extends BlockBase {
     public BlockOre(float hardNess,int level,String name,Material material){
-        super(AncientChina_Core.MODID,name,material);
+        super(AncientChinaCore.MODID,name,material);
         this.setHardness(hardNess);
         this.setHarvestLevel("pickaxe",1);
     }

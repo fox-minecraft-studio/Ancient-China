@@ -10,10 +10,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 /**
  * @author ajacker
  */
-@Mod(modid = AncientChina_COF.MODID, name = AncientChina_COF.NAME, version = AncientChina_COF.VERSION,
+@Mod(modid = AncientChinaCOF.MODID, name = AncientChinaCOF.NAME, version = AncientChinaCOF.VERSION,
         dependencies = "required-after:ancientchina-core@[0.0.1,);")
 
-public class AncientChina_COF {
+public class AncientChinaCOF {
     public static final String MODID = "ancientchina-cof";
     public static final String NAME = "Ancient China(Change Of Fire)";
     public static final String VERSION = "0.0.1";

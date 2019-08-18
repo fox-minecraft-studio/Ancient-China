@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 
-import static com.fox.ancientchina.cof.AncientChina_COF.MODID;
+import static com.fox.ancientchina.cof.AncientChinaCOF.MODID;
 
 
 /**

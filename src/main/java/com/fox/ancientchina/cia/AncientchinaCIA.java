@@ -2,6 +2,7 @@ package com.fox.ancientchina.cia;
 
 import com.fox.ancientchina.cia.lib.ModInfo;
 import com.fox.ancientchina.cia.proxy.CommonProxy;
+import com.fox.ancientchina.core.AncientChinaCore;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -14,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 /**
  * @author yaesey
  */
-@Mod(modid = ModInfo.MODID,name = ModInfo.NAME,version = ModInfo.VENSION)
+@Mod(modid = ModInfo.MODID,name = ModInfo.NAME,version = ModInfo.VENSION,dependencies = "required-after:" + AncientChinaCore.MODID)
 public class AncientchinaCIA {
     @Instance(ModInfo.MODID)
     public static AncientchinaCIA INSTANCE;
