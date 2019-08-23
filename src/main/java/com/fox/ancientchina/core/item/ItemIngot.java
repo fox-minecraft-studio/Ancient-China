@@ -5,6 +5,6 @@ import com.fox.ancientchina.core.util.lib.ItemBase;
 
 public class ItemIngot extends ItemBase {
     public ItemIngot(String name){
-        super(AncientChinaCore.MODID,name);
+        super(name);
     }
 }

@@ -3,6 +3,7 @@ package com.fox.ancientchina.tensei.util.lib;
 import com.fox.ancientchina.core.util.IModelRegister;
 import com.fox.ancientchina.tensei.AncientChinaTensei;
 import com.fox.ancientchina.tensei.Loader.BlockLoader;
+import com.fox.ancientchina.tensei.Loader.CreativeTabsLoader;
 import com.fox.ancientchina.tensei.Loader.ItemLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -28,6 +29,7 @@ public class BlockTensei extends Block implements IModelRegister
         super(material);
         this.setUnlocalizedName(MODID + "." + name);
         this.setRegistryName(name);
+        this.setCreativeTab(CreativeTabsLoader.TAB_AC_TENSEI_BLOCK);
 
         BlockLoader.BLOCKS.add(this);
         ItemLoader.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
@@ -36,7 +38,7 @@ public class BlockTensei extends Block implements IModelRegister
     @Override
     public void registerModels()
     {
-        AncientChinaTensei.proxy.registerItemRender(Item.getItemFromBlock(this), 0, "inven tory");
+        AncientChinaTensei.proxy.registerItemRender(Item.getItemFromBlock(this), 0, "inventory");
     }
 
     /**

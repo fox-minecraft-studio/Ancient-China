@@ -8,12 +8,12 @@ import static com.fox.ancientchina.tensei.AncientChinaTensei.MODID;
 
 public class CreativeTabsLoader
 {
-    public static final CreativeTabs TAB_AC_TENSEI_BLOCK = (new CreativeTabsTensei(MODID + "tab_item")
+    public static final CreativeTabs TAB_AC_TENSEI_BLOCK = (new CreativeTabsTensei(MODID + "tabItem")
     {
         @Override
         public ItemStack getTabIconItem()
         {
-            return null;
+            return new ItemStack(BlockLoader.ICON_BLOCK);
         }
 
         @Override
@@ -24,12 +24,12 @@ public class CreativeTabsLoader
 
     });
 
-    public static final CreativeTabs TAB_AC_TENSEI_ITEM = (new CreativeTabsTensei(MODID + "tab_block")
+    public static final CreativeTabs TAB_AC_TENSEI_ITEM = (new CreativeTabsTensei(MODID + "tabBlock")
     {
         @Override
         public ItemStack getTabIconItem()
         {
-            return null;
+            return new ItemStack(BlockLoader.ICON_BLOCK);
         }
 
         @Override
