@@ -1,0 +1,14 @@
+itemGroup.ancientchinacore.tab_item=华夏画卷(Core) 物品
+itemGroup.ancientchinacore.tab_block=华夏画卷(Core) 方块
+item.ancientchinacore.nya_apple.name=测试物品
+tile.ancientchinacore.nya_ore.name=测试方块
+
+tile.ancientchinacore.copper_ore.name=铜矿
+tile.ancientchinacore.lead_ore.name=铅矿
+tile.ancientchinacore.zinc_ore.name=锌矿
+tile.ancientchinacore.tin_ore.name=锡矿
+
+item.ancientchinacore.copper_ingot.name=铜锭
+item.ancientchinacore.lead_ingot.name=铅锭
+item.ancientchinacore.zinc_ingot.name=锌锭
+item.ancientchinacore.tin_ingot.name=锡锭

@@ -10,7 +10,7 @@ import net.minecraft.block.material.Material;
  */
 public class BlockOre extends BlockBase {
     public BlockOre(float hardNess,int level,String name,Material material){
-        super(AncientChinaCore.MODID,name,material);
+        super(name, material);
         this.setHardness(hardNess);
         this.setHarvestLevel("pickaxe",1);
     }

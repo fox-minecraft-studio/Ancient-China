@@ -10,6 +10,6 @@ import com.fox.ancientchina.core.util.lib.ItemBase;
  */
 public class NyaApple extends ItemBase {
     public NyaApple(String name) {
-        super(AncientChinaCore.MODID,name);
+        super(name);
     }
 }

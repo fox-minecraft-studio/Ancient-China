@@ -1,0 +1,14 @@
+itemGroup.ancientchinacore.tab_item=AncientChina(Core) Item
+itemGroup.ancientchinacore.tab_block=AncientChina(Core) Block
+item.ancientchinacore.nya_apple.name=Test Item
+tile.ancientchinacore.nya_ore.name=Test Block
+
+tile.ancientchinacore.copper_ore.name=Copper Ore
+tile.ancientchinacore.lead_ore.name=Lead Ore
+tile.ancientchinacore.zinc_ore.name=Zinc Ore
+tile.ancientchinacore.tin_ore.name=Tin Ore
+
+item.ancientchinacore.copper_ingot.name=Copper Ingot
+item.ancientchinacore.lead_ingot.name=Lead Ingot
+item.ancientchinacore.zinc_ingot.name=Zinc Ingot
+item.ancientchinacore.tin_ingot.name=Tin Ingot

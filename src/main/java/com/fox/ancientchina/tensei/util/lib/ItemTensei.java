@@ -2,6 +2,7 @@ package com.fox.ancientchina.tensei.util.lib;
 
 import com.fox.ancientchina.core.util.IModelRegister;
 import com.fox.ancientchina.tensei.AncientChinaTensei;
+import com.fox.ancientchina.tensei.Loader.CreativeTabsLoader;
 import com.fox.ancientchina.tensei.Loader.ItemLoader;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -23,6 +24,7 @@ public class ItemTensei extends Item implements IModelRegister
     {
         this.setUnlocalizedName(MODID + "." + name);
         this.setRegistryName(name);
+        this.setCreativeTab(CreativeTabsLoader.TAB_AC_TENSEI_ITEM);
 
         ItemLoader.ITEMS.add(this);
     }
