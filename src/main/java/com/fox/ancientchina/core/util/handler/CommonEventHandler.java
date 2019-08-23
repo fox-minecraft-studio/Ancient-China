@@ -12,8 +12,10 @@ import static com.fox.ancientchina.core.AncientChinaCore.MODID;
 @Mod.EventBusSubscriber(modid = MODID)
 public class CommonEventHandler {
     @SubscribeEvent
-    public static void onPlayerInteract(PlayerInteractEvent event) {
-        if (!event.getWorld().isRemote) {
+    public static void onPlayerInteract(PlayerInteractEvent event)
+    {
+        if (!event.getWorld().isRemote)
+        {
             //something
         }
     }

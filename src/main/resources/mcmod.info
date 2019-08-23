@@ -1,6 +1,6 @@
 [
   {
-    "modid": "ancientchina-core",
+    "modid": "ancientchinacore",
     "name": "Ancient China(Core)",
     "description": "A mod dedicated to creating a beautiful ancient Chinese scene\n\n.",
     "version": "@version@",
@@ -18,7 +18,7 @@
     "dependencies": []
   },
   {
-    "modid": "ancientchina-cof",
+    "modid": "ancientchinacof",
     "name": "Ancient China(Change Of Fire)",
     "description": "The change of fire!The amazing world!.",
     "version": "${version}",
@@ -34,19 +34,19 @@
     "dependencies": []
   },
   {
-  "modid": "ancientchina-cia",
-  "name": "Ancient China(Chemistry In Alchemy)",
-  "description": "It is magic,alchemy,or chemistry?",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": [
-    "yaesey"
-  ],
-  "credits": "lin jian tian, cat",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
+    "modid": "ancientchinatensei",
+    "name": "Ancient China Tensei",
+    "description": "Tensei. weird stuff.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "cyciling"
+    ],
+    "credits": "cat",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
 ]

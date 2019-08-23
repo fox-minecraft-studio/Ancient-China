@@ -14,8 +14,9 @@ import org.apache.logging.log4j.Logger;
  * @author ajacker
  */
 @Mod(modid = AncientChinaCore.MODID, name = AncientChinaCore.NAME, version = AncientChinaCore.VERSION)
-public class AncientChinaCore {
-    public static final String MODID = "ancientchina-core";
+public class AncientChinaCore
+{
+    public static final String MODID = "ancientchinacore";
     public static final String NAME = "Ancient China(Core)";
     public static final String VERSION = "0.0.1";
 
@@ -38,6 +39,7 @@ public class AncientChinaCore {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+
     }
 
     @EventHandler

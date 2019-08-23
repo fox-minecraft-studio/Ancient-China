@@ -1,10 +1,9 @@
-package com.fox.ancientchina.cof.util.lib;
+package com.fox.ancientchina.tensei.util.lib;
 
-import com.fox.ancientchina.cof.AncientChinaCOF;
-import com.fox.ancientchina.cof.loader.BlockLoader;
-import com.fox.ancientchina.cof.loader.CreativeTabsLoader;
-import com.fox.ancientchina.cof.loader.ItemLoader;
 import com.fox.ancientchina.core.util.IModelRegister;
+import com.fox.ancientchina.tensei.AncientChinaTensei;
+import com.fox.ancientchina.tensei.Loader.BlockLoader;
+import com.fox.ancientchina.tensei.Loader.ItemLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.resources.I18n;
@@ -20,30 +19,29 @@ import org.lwjgl.input.Keyboard;
 
 import java.util.List;
 
-import static com.fox.ancientchina.cof.AncientChinaCOF.MODID;
+import static com.fox.ancientchina.tensei.AncientChinaTensei.MODID;
 
-/**
- * @author ajacker
- */
-public class BlockBase extends Block implements IModelRegister
+public class BlockTensei extends Block implements IModelRegister
 {
-    public BlockBase(String name, Material materialIn)
+    public BlockTensei(String name, Material material)
     {
-        super(materialIn);
-        setUnlocalizedName(MODID + "." + name);
-        setRegistryName(name);
-        setCreativeTab(CreativeTabsLoader.TAB_AC_COF_BLOCK);
+        super(material);
+        this.setUnlocalizedName(MODID + "." + name);
+        this.setRegistryName(name);
 
         BlockLoader.BLOCKS.add(this);
-        ItemLoader.ITEMS.add(new ItemBlock(this).setRegistryName(name));
+        ItemLoader.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
     }
 
     @Override
     public void registerModels()
     {
-        AncientChinaCOF.proxy.registerModel(Item.getItemFromBlock(this), 0, "inventory");
+        AncientChinaTensei.proxy.registerItemRender(Item.getItemFromBlock(this), 0, "inven tory");
     }
 
+    /**
+     * 继承该类的方块都会被强制添加注释
+     */
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemstack, World world, List<String> list, ITooltipFlag flag)
     {
