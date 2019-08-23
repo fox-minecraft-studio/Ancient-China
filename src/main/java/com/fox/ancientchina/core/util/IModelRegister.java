@@ -1,6 +1,5 @@
 package com.fox.ancientchina.core.util;
 
-
 /**
  * @author ajacker
  */

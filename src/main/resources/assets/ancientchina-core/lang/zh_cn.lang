@@ -4,3 +4,11 @@ item.ancientchina-core.nya_apple.name=测试物品
 tile.ancientchina-core.nya_ore.name=测试方块
 
 tile.ancientchina-core.copper_ore.name=铜矿
+tile.ancientchina-core.lead_ore.name=铅矿
+tile.ancientchina-core.zinc_ore.name=锌矿
+tile.ancientchina-core.tin_ore.name=锡矿
+
+item.ancientchina-core.copper_ingot.name=铜锭
+item.ancientchina-core.lead_ingot.name=铅锭
+item.ancientchina-core.zinc_ingot.name=锌锭
+item.ancientchina-core.tin_ingot.name=锡锭
