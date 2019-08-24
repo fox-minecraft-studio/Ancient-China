@@ -13,6 +13,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.Random;
 
@@ -41,7 +42,7 @@ public class OreGen implements IWorldGenerator {
             //注意，在参数oreCount的设置上，我使用random来设定随机生成数量
             //现在矿物数量为9-13个
             //(或许是对非洲人的挑战？)
-            genOreHelper(BlockLoader.COPPER_ORE.getDefaultState(),world,random,chunkX,chunkZ,0,128,9 + random.nextInt(4),4);
+            genOreHelper(BlockLoader.COPPER_ORE.getDefaultState(),world,random,chunkX,chunkZ,0,128,23 + random.nextInt(4),4);
         }
     }
 
@@ -55,6 +56,8 @@ public class OreGen implements IWorldGenerator {
         //fixme:这是一个测试，当我们构建并发布mod时，我们应该删除这些代码
         genOreHelper(BlockLoader.NYA_ORE.getDefaultState(),event.getWorld(),event.getRand(),
                 event.getPos().getX(),event.getPos().getZ(),0,256,23,4);
+        genOreHelper(BlockLoader.COPPER_ORE.getDefaultState(),event.getWorld(),event.getRand(),
+                event.getPos().getX(),event.getPos().getZ(),0,128,23 + event.getRand().nextInt(6),4);
     }
 
     /**
