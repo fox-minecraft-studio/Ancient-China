@@ -1,13 +1,6 @@
 {
-<<<<<<< HEAD
     "pack": {
         "description": "Resources is used by Ancient China Mod",
         "pack_format": 3
-=======
-    "pack":
-    {
-        "pack_format": 3,
-        "description": ancientchina"
->>>>>>> ef815dd4c96645a188b260c9e7b90df79b1466a7
     }
 }
