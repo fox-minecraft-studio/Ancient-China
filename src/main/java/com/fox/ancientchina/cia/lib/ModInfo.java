@@ -1,5 +1,8 @@
 package com.fox.ancientchina.cia.lib;
 
+/**
+ * @author yaesey
+ */
 public class ModInfo {
     public static final String MODID = "ancientchina-cia";
     public static final String NAME = "Ancient China(Chemistry In Alchemy)";

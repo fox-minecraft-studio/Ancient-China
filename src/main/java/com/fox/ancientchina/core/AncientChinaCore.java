@@ -1,5 +1,6 @@
 package com.fox.ancientchina.core;
 
+import com.fox.ancientchina.core.event.SmeltHander;
 import com.fox.ancientchina.core.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -39,7 +40,11 @@ public class AncientChinaCore
     @EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+<<<<<<< HEAD
+        SmeltHander.init();
+=======
 
+>>>>>>> ef815dd4c96645a188b260c9e7b90df79b1466a7
     }
 
     @EventHandler

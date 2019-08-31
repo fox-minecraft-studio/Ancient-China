@@ -48,5 +48,21 @@
     "logoFile": "",
     "screenshots": [],
     "dependencies": []
+  },
+  {
+    "modid": "ancientchinacia",
+    "name": "Ancient China(Ancient China(Chemistry In Alchemy))",
+    "description": "What is that?It is magic,alchemy or Chemistry?",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "yaesey"
+    ],
+    "credits": "lin jian tian, cat",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
   }
 ]
