@@ -55,11 +55,7 @@ public class OreGen {
         }
         int domain = maxY - minY;
         for (int i = 0; i < chances; i++) {
-            //注意，这里的16是防止重复加载区块而设定的值
-            //
-            //fixme:2019.8.15：我们在测试的时候，仍然发现 Forge 的“世界生成延迟”这一警告，虽然可以取消这个警告
-            // 我认为这是一个值得注意的事情，但我对优化代码很不在行，所以请诸位帮我优化这个代码
-            // 另：当解决这个问题时，请删除这一注释 by yaesey
+            //这里的16是防止重复加载区块而设定的值
             int posX = pos.getX() + random.nextInt(16);
             int posY = minY + random.nextInt(domain);
             int posZ = pos.getZ() + random.nextInt(16);
