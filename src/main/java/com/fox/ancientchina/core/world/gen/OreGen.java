@@ -63,7 +63,7 @@ public class OreGen {
             WorldGenerator generator = new WorldGenMinable(state,oreCount);
             generator.generate(world, random, orePos);
             //普通玩家看不见这个
-            System.out.println("矿物坐标x:"+posX+"\ty:"+posY+"\tz:"+posZ);
+            System.out.println("矿物坐标x:"+posX+"\t y:"+posY+"\tz:"+posZ);
         }
     }
 }

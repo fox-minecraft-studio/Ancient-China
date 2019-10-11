@@ -17,6 +17,9 @@ public class ItemLoader {
     public static final Item ZINC_INGOT = new ItemIngot("zinc_ingot");
     public static final Item TIN_INGOT = new ItemIngot("tin_ingot");
 
+    public static final Item CINNBAR_POWDER = new ItemIngot("cinnbar_powder");
+    public static final Item SULPHUR_POWDER = new ItemIngot("sulphur_powder");
+
     public void dictionaryRegister(){
         OreDictionary.registerOre("ingotCopper",COPPER_INGOT);
         OreDictionary.registerOre("ingotLead",LEAD_INGOT);
@@ -27,5 +30,6 @@ public class ItemLoader {
         OreDictionary.registerOre("oreLead",BlockLoader.LEAD_ORE);
         OreDictionary.registerOre("oreZinc",BlockLoader.ZINC_ORE);
         OreDictionary.registerOre("oreTin",BlockLoader.TIN_ORE);
+        OreDictionary.registerOre("oreSilver",BlockLoader.SILVER_ORE);
     }
 }

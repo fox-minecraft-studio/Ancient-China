@@ -7,8 +7,14 @@ tile.ancientchinacore.copper_ore.name=铜矿
 tile.ancientchinacore.lead_ore.name=铅矿
 tile.ancientchinacore.zinc_ore.name=锌矿
 tile.ancientchinacore.tin_ore.name=锡矿
+tile.ancientchinacore.silver_ore.name=银矿
+tile.ancientchinacore.cinnbar.name=朱砂
+tile.ancientchinacore.sulphur.name=硫磺
+tile.ancientchinacore.jade.name=玉石
 
 item.ancientchinacore.copper_ingot.name=铜锭
 item.ancientchinacore.lead_ingot.name=铅锭
 item.ancientchinacore.zinc_ingot.name=锌锭
 item.ancientchinacore.tin_ingot.name=锡锭
+item.ancientchinacore.cinnbar_powder.name=朱砂粉
+item.ancientchinacore.sulphur_powder.name=硫粉
