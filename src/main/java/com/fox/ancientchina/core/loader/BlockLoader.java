@@ -20,4 +20,5 @@ public class BlockLoader {
     public static final Block LEAD_ORE = new BlockOre("lead_ore",Material.ROCK);
     public static final Block ZINC_ORE = new BlockOre("zinc_ore",Material.ROCK);
     public static final Block TIN_ORE = new BlockOre("tin_ore",Material.ROCK);
+    public static final Block SILVER_ORE = new BlockOre("silver_ore",Material.ROCK);
 }

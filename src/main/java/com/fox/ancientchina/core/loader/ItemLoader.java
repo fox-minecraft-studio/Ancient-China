@@ -27,5 +27,6 @@ public class ItemLoader {
         OreDictionary.registerOre("oreLead",BlockLoader.LEAD_ORE);
         OreDictionary.registerOre("oreZinc",BlockLoader.ZINC_ORE);
         OreDictionary.registerOre("oreTin",BlockLoader.TIN_ORE);
+        OreDictionary.registerOre("oreSilver",BlockLoader.SILVER_ORE);
     }
 }
