@@ -27,7 +27,7 @@ public class BlockLoader {
     public static final Block TIN_ORE = new BlockOre("tin_ore",Material.ROCK);
     public static final Block SILVER_ORE = new BlockOre("silver_ore",Material.ROCK);
 
-    //ÖìÉ°£¬µôÖìÉ°·Û
+    //æœ±ç ‚ï¼Œæ‰è½æœ±ç ‚ç²‰
     public static final Block CINNBAR = new BlockOre("cinnbar",Material.ROCK){
         @Override
         public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
@@ -35,7 +35,7 @@ public class BlockLoader {
             drops.add(itemStack);
         }
     };
-    //Áò·Û£¬µôÁò·Û
+    //ç¡«ç£ºï¼Œæ‰è½ç¡«ç£ºç²‰
     public static final Block SULPHUR = new BlockOre("sulphur",Material.ROCK){
         @Override
         public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
@@ -43,7 +43,7 @@ public class BlockLoader {
             drops.add(itemStack);
         }
     };
-    //ÓñÊ¯£¬µôÔ­Ê¯
+    //ç‰çŸ³ï¼Œæ‰è½åœ†çŸ³
     public static final Block JADE = new BlockOre("jade",Material.ROCK){
         @Override
         public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
