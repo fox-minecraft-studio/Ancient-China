@@ -10,7 +10,7 @@ import com.fox.ancientchina.core.api.capability.IQiAndStrength;
 public class CapabilityQiAndStrength implements IQiAndStrength{
     public static final CapabilityQiAndStrength INSTANCE = new CapabilityQiAndStrength();
 
-    public int strengthValue;
+    public int strengthValue = 0;
 
     @Override
     public void update() {
