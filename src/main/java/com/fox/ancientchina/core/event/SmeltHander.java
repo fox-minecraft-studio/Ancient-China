@@ -5,6 +5,9 @@ import com.fox.ancientchina.core.loader.ItemLoader;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+/**
+ * 在这里添加烧炼配方
+ */
 public class SmeltHander {
     public static void init(){
         GameRegistry.addSmelting(BlockLoader.COPPER_ORE,new ItemStack(ItemLoader.COPPER_INGOT),1.0F);

@@ -1,7 +1,9 @@
 package com.fox.ancientchina.core;
 
+import com.fox.ancientchina.core.event.AncientChinaPlayerEvent;
 import com.fox.ancientchina.core.event.SmeltHander;
 import com.fox.ancientchina.core.proxy.CommonProxy;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -35,6 +37,7 @@ public class AncientChinaCore
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
         logger = event.getModLog();
+        MinecraftForge.EVENT_BUS.register(AncientChinaPlayerEvent.class);
     }
 
     @EventHandler
