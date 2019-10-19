@@ -28,7 +28,6 @@ public class AncientChinaCore
 
     @SidedProxy(clientSide = "com.fox.ancientchina.core.proxy.ClientProxy",
             serverSide = "com.fox.ancientchina.core.proxy.CommonProxy")
-
     public static CommonProxy proxy;
 
     private Logger logger;

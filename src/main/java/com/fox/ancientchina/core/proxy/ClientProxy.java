@@ -1,7 +1,6 @@
 package com.fox.ancientchina.core.proxy;
 
-import com.fox.ancientchina.core.client.RenderHudEvent;
-import com.fox.ancientchina.core.proxy.CommonProxy;
+import com.fox.ancientchina.core.client.gui.RenderHudEvent;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -23,8 +22,9 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void init(FMLInitializationEvent event) {
+        System.out.println("客户端启动init事件");
         super.init(event);
-        MinecraftForge.EVENT_BUS.register(RenderHudEvent.class);
+        new RenderHudEvent();
     }
 
     @Override
