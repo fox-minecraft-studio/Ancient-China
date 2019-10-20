@@ -18,3 +18,7 @@ item.ancientchinacore.zinc_ingot.name=Zinc Ingot
 item.ancientchinacore.tin_ingot.name=Tin Ingot
 item.ancientchinacore.cinnbar_powder.name=Cinnbar Powder
 item.ancientchinacore.sulphur_powder.name=Sulphur Powder
+
+#Gui
+ac.gui.hud.health=Health Value:
+ac.gui.hud.strength=Strength Value:

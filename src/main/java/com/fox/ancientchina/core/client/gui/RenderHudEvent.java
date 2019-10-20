@@ -3,9 +3,12 @@ package com.fox.ancientchina.core.client.gui;
 import com.fox.ancientchina.core.api.capability.IQiAndHealth;
 import com.fox.ancientchina.core.capabilities.CapabilityQiAndHealth;
 import com.fox.ancientchina.core.capabilities.CapabilityQiAndStrength;
+import com.fox.ancientchina.core.capabilities.EnumWuXing;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.Capability;
@@ -24,20 +27,19 @@ public class RenderHudEvent {
 
     @SubscribeEvent
     public void onHudRender(RenderGameOverlayEvent event){
-        if (event.getType() == RenderGameOverlayEvent.ElementType.ALL){
-            return;
+        if (event.getType() == RenderGameOverlayEvent.ElementType.HEALTH){
+            drawData(10);
+            mc.renderEngine.bindTexture(Gui.ICONS);
         }
-        drawData(20);
-        mc.renderEngine.bindTexture(Gui.ICONS);
     }
 
     /**
      * 这个方法负责绘制数据值
-     * @param downset 向下偏移数值
+     * @param downSet 向下偏移数值
      */
-    public void drawData(int downset){
+    public void drawData(int downSet){
         int y = 0;
-        mc.fontRenderer.drawString("气血值：" + CapabilityQiAndHealth.INSTANCE.getQiAndHealth(),0,y,0xFFFFFFFF);
-        mc.fontRenderer.drawString("气力值：" + CapabilityQiAndStrength.INSTANCE.getQiAndStrength(),0,y + downset,0xFFFFFFFF);
+        mc.fontRenderer.drawString(I18n.format("ac.gui.hud.health") + CapabilityQiAndHealth.INSTANCE.getQiAndHealth(),0,y,0xFFFFFFFF);
+        mc.fontRenderer.drawString(I18n.format("ac.gui.hud.strength") + CapabilityQiAndStrength.INSTANCE.getQiAndStrength(),0,y + downSet,0xFFFFFFFF);
     }
 }
