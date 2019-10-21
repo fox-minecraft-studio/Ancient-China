@@ -18,3 +18,7 @@ item.ancientchinacore.zinc_ingot.name=锌锭
 item.ancientchinacore.tin_ingot.name=锡锭
 item.ancientchinacore.cinnbar_powder.name=朱砂粉
 item.ancientchinacore.sulphur_powder.name=硫粉
+
+# Gui
+ac.gui.hud.health=气血值:
+ac.gui.hud.strength=气力值:

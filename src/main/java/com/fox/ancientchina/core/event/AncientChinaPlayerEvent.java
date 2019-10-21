@@ -25,6 +25,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  * @author yaesey
  */
 public class AncientChinaPlayerEvent {
+    /**
+     * 玩家在去世或者从一个维度来到另一个维度时，
+     * 在原版中是先复制一个玩家，再把玩家数据转移到这个复制品上面
+     * 本方法监听Clone事件，并将本Mod的数据值复制到玩家上面
+     * @param event
+     */
     @SubscribeEvent
     public void onPlayClone(PlayerEvent.Clone event){
         Capability<IQiAndStrength> strength = CapabilitiesLoader.CAPABILITY_QI_AND_STRENGTH;
@@ -39,6 +45,9 @@ public class AncientChinaPlayerEvent {
         cloneHelper(event,wuXing,wuXingStorage);
     }
 
+    /**
+     * todo:这个方法正在考虑是否加入API中
+     */
     private void cloneHelper(PlayerEvent.Clone event, Capability capability,IStorage storage){
         if (event.getOriginal().hasCapability(capability,null) && event.getEntityPlayer().hasCapability(capability,null)){
             NBTBase nbtBase = storage.writeNBT(capability,event.getOriginal().getCapability(capability,null),null);
