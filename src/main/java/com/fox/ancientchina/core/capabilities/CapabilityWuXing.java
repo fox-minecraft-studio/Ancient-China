@@ -9,7 +9,6 @@ import com.fox.ancientchina.core.api.capability.IWuXing;
 public class CapabilityWuXing implements IWuXing {
     public static final CapabilityWuXing INSTANCE = new CapabilityWuXing();
 
-    @Override
     public void update() {
         //todo:添加五行值的增减机制
     }

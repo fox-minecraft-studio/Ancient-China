@@ -5,8 +5,6 @@ package com.fox.ancientchina.core.api.capability;
  */
 public interface IQiAndStrength {
 
-    void update();
-
     void setQiAndStrength(int strengthValue);
 
     int getQiAndStrength();

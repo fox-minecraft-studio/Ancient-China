@@ -5,7 +5,6 @@ package com.fox.ancientchina.core.api.capability;
  * @author yaesey
  */
 public interface IQiAndHealth {
-    void update();
 
     void setQiAndHealth(int healthValue);
 

@@ -1,4 +1,4 @@
-package com.fox.ancientchina.core.capabilities;
+package com.fox.ancientchina.core.capabilities.qi;
 
 import com.fox.ancientchina.core.api.capability.IQiAndStrength;
 
@@ -12,7 +12,6 @@ public class CapabilityQiAndStrength implements IQiAndStrength{
 
     public int strengthValue = 0;
 
-    @Override
     public void update() {
         //todo:添加有关气力值增减机制
     }

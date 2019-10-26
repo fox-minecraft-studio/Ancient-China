@@ -8,7 +8,6 @@ import com.fox.ancientchina.core.capabilities.EnumWuXing;
  * @author yaesey
  */
 public interface IWuXing {
-    void update();
 
     default void setWuXingValue(EnumWuXing wuXing,int value){
         wuXing.setValue(value);

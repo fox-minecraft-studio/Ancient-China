@@ -1,4 +1,4 @@
-package com.fox.ancientchina.core.capabilities;
+package com.fox.ancientchina.core.capabilities.qi;
 
 import com.fox.ancientchina.core.api.capability.IQiAndStrength;
 import net.minecraft.nbt.NBTBase;
