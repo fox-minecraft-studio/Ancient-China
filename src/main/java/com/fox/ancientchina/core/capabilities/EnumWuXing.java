@@ -1,5 +1,7 @@
 package com.fox.ancientchina.core.capabilities;
 
+import net.minecraft.nbt.NBTTagCompound;
+
 /**
  * 这个枚举定义了金木水火土五种五行值(暂时使用拼音)
  * @author yaesey
@@ -27,5 +29,21 @@ public enum EnumWuXing {
 
     public int getValue() {
         return this.value;
+    }
+
+    public void writeNBT(NBTTagCompound nbt){
+        nbt.setInteger("jin",JIN.getValue());
+        nbt.setInteger("mu",MU.getValue());
+        nbt.setInteger("shui",SHUI.getValue());
+        nbt.setInteger("huo",HUO.getValue());
+        nbt.setInteger("tu",TU.getValue());
+    }
+
+    public void readNBT(NBTTagCompound nbt){
+        JIN.setValue(nbt.getInteger("jin"));
+        MU.setValue(nbt.getInteger("mu"));
+        SHUI.setValue(nbt.getInteger("shui"));
+        HUO.setValue(nbt.getInteger("huo"));
+        TU.setValue(nbt.getInteger("tu"));
     }
 }

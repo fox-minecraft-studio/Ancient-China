@@ -4,6 +4,7 @@ import com.fox.ancientchina.core.api.capability.ISerializableData;
 import com.google.common.base.Preconditions;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
@@ -32,6 +33,9 @@ public class EntityCapabilitiesHelper {
     /** 这个存放在{@link com.fox.ancientchina.core.loader.CapabilitiesLoader}注册过的实体能力*/
     private static final List<EntityCapability<?, ?, ? extends Entity>> LOADER_CAPABILITIES = new ArrayList<EntityCapability<?, ?, ? extends Entity>>();
     private static final Map<ResourceLocation,EntityCapability<?, ?, ? extends Entity>> ID_MAP = new HashMap<ResourceLocation, EntityCapability<?, ?, ? extends Entity>>();
+    private static final Map<EntityPlayerMP, List<EntityCapabilityTracker>> TRACKER_MAP = new HashMap<EntityPlayerMP, List<EntityCapabilityTracker>>();
+
+    private static int updateTimer = 0;
 
     public static <F extends EntityCapability<F, C, E>,C ,E extends Entity> void registerEntityCapability(EntityCapability<F,C,E> capability){
         //确保这个鬼东西真的是实体能力，而不是更可怕的东西
