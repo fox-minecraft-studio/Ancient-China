@@ -1,5 +1,6 @@
 package com.fox.ancientchina.core.proxy;
 
+import com.fox.ancientchina.core.loader.CapabilitiesLoader;
 import com.fox.ancientchina.core.world.gen.OreGen;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -14,7 +15,7 @@ public class CommonProxy
 
     public void preInit(FMLPreInitializationEvent event)
     {
-
+        CapabilitiesLoader.preInit();
     }
 
     public void init(FMLInitializationEvent event)

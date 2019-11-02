@@ -1,4 +1,4 @@
-package com.fox.ancientchina.core.capabilities;
+package com.fox.ancientchina.core.capabilities.qi;
 
 import com.fox.ancientchina.core.api.capability.IQiAndHealth;
 import net.minecraft.nbt.NBTBase;
@@ -7,7 +7,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 
 import javax.annotation.Nullable;
-
+@Deprecated
 public class StorageQiAndHealth implements Capability.IStorage<IQiAndHealth> {
     @Nullable
     @Override

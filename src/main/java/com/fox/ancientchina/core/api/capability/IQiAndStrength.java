@@ -3,9 +3,8 @@ package com.fox.ancientchina.core.api.capability;
 /**
  * @author yaesey
  */
+@Deprecated
 public interface IQiAndStrength {
-
-    void update();
 
     void setQiAndStrength(int strengthValue);
 

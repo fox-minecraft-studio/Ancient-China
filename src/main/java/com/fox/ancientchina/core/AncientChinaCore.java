@@ -1,6 +1,6 @@
 package com.fox.ancientchina.core;
 
-import com.fox.ancientchina.core.event.AncientChinaPlayerEvent;
+import com.fox.ancientchina.core.capabilities.base.EntityCapabilitiesHelper;
 import com.fox.ancientchina.core.event.SmeltHander;
 import com.fox.ancientchina.core.proxy.CommonProxy;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,7 +36,7 @@ public class AncientChinaCore
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
         logger = event.getModLog();
-        MinecraftForge.EVENT_BUS.register(AncientChinaPlayerEvent.class);
+        MinecraftForge.EVENT_BUS.register(EntityCapabilitiesHelper.class);
     }
 
     @EventHandler

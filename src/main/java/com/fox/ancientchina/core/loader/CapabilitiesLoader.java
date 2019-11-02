@@ -4,6 +4,11 @@ import com.fox.ancientchina.core.api.capability.IQiAndHealth;
 import com.fox.ancientchina.core.api.capability.IQiAndStrength;
 import com.fox.ancientchina.core.api.capability.IWuXing;
 import com.fox.ancientchina.core.capabilities.*;
+import com.fox.ancientchina.core.capabilities.base.EntityCapabilitiesHelper;
+import com.fox.ancientchina.core.capabilities.qi.CapabilityQiAndHealth;
+import com.fox.ancientchina.core.capabilities.qi.CapabilityQiAndStrength;
+import com.fox.ancientchina.core.capabilities.qi.StorageQiAndHealth;
+import com.fox.ancientchina.core.capabilities.qi.StorageQiAndStrength;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.CapabilityManager;
@@ -23,8 +28,8 @@ public class CapabilitiesLoader {
     public static final Capability<IWuXing> CAPABILITY_WUXING = null;
 
     public static void preInit(){
-        CapabilityManager.INSTANCE.register(IQiAndStrength.class,new StorageQiAndStrength(),CapabilityQiAndStrength::new);
-        CapabilityManager.INSTANCE.register(IQiAndHealth.class,new StorageQiAndHealth(),CapabilityQiAndHealth::new);
-        CapabilityManager.INSTANCE.register(IWuXing.class,new StorageWuXing(),CapabilityWuXing::new);
+        EntityCapabilitiesHelper.registerEntityCapability(new CapabilityWuXing());
+        System.out.println("已注册实体能力");
+        EntityCapabilitiesHelper.registerAllCapabilities();
     }
 }
