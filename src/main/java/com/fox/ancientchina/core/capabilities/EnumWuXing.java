@@ -31,14 +31,6 @@ public enum EnumWuXing {
         return this.value;
     }
 
-    public void writeNBT(NBTTagCompound nbt){
-        nbt.setInteger("jin",JIN.getValue());
-        nbt.setInteger("mu",MU.getValue());
-        nbt.setInteger("shui",SHUI.getValue());
-        nbt.setInteger("huo",HUO.getValue());
-        nbt.setInteger("tu",TU.getValue());
-    }
-
     public void readNBT(NBTTagCompound nbt){
         JIN.setValue(nbt.getInteger("jin"));
         MU.setValue(nbt.getInteger("mu"));

@@ -28,8 +28,8 @@ public class CapabilitiesLoader {
     public static final Capability<IWuXing> CAPABILITY_WUXING = null;
 
     public static void preInit(){
-
-        CapabilityManager.INSTANCE.register(IQiAndHealth.class,new StorageQiAndHealth(), CapabilityQiAndHealth::new);
-        CapabilityManager.INSTANCE.register(IWuXing.class,new StorageWuXing(),CapabilityWuXing::new);
+        EntityCapabilitiesHelper.registerEntityCapability(new CapabilityWuXing());
+        System.out.println("已注册实体能力");
+        EntityCapabilitiesHelper.registerAllCapabilities();
     }
 }

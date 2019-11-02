@@ -45,12 +45,20 @@ public class CapabilityWuXing extends EntityCapability<CapabilityWuXing,IWuXing,
 
     @Override
     public void writeToNBT(NBTTagCompound nbt) {
-        wuXing.writeNBT(nbt);
+        nbt.setInteger("jin",wuXing.JIN.getValue());
+        nbt.setInteger("mu",wuXing.MU.getValue());
+        nbt.setInteger("shui",wuXing.SHUI.getValue());
+        nbt.setInteger("huo",wuXing.HUO.getValue());
+        nbt.setInteger("tu",wuXing.TU.getValue());
     }
 
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
-        wuXing.readNBT(nbt);
+        wuXing.JIN.setValue(nbt.getInteger("jin"));
+        wuXing.MU.setValue(nbt.getInteger("mu"));
+        wuXing.SHUI.setValue(nbt.getInteger("shui"));
+        wuXing.HUO.setValue(nbt.getInteger("huo"));
+        wuXing.TU.setValue(nbt.getInteger("tu"));
     }
 
     @Override

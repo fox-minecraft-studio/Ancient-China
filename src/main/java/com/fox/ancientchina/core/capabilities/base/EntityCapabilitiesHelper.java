@@ -37,6 +37,9 @@ public class EntityCapabilitiesHelper {
 
     private static int updateTimer = 0;
 
+    /**
+     * 注意：请使用这个注册能力！！！
+     */
     public static <F extends EntityCapability<F, C, E>,C ,E extends Entity> void registerEntityCapability(EntityCapability<F,C,E> capability){
         //确保这个鬼东西真的是实体能力，而不是更可怕的东西
         Preconditions.checkState(capability.getCapabilityClass().isAssignableFrom(capability.getClass()),
@@ -45,6 +48,8 @@ public class EntityCapabilitiesHelper {
     }
 
     /**
+     * <b>注意：除非有特殊需求，这个方法不能被调用在其他类之中</b>
+     *
      * Forge的能力注册流程：以下是AncientChina早期使用的注册：
      * CapabilityManager.INSTANCE.register(IQiAndStrength.class,new StorageQiAndStrength(), CapabilityQiAndStrength::new);
      * 分别为能力的定义接口，存储和默认实现,
@@ -56,8 +61,8 @@ public class EntityCapabilitiesHelper {
      * @param <E> 实体
      */
     public static <C,E extends Entity> void registerCapability(EntityCapability<?,C,E> capability){
+        //register方法需要定义接口（由getCapabilityClass()给出），存储和默认实现
         CapabilityManager.INSTANCE.register(capability.getCapabilityClass(), new Capability.IStorage<C>() {
-            @Nullable
             @Override
             public NBTBase writeNBT(Capability<C> capability, C instance, EnumFacing side) {
                 if (instance instanceof ISerializableData) {
@@ -78,12 +83,16 @@ public class EntityCapabilitiesHelper {
             @SuppressWarnings("unchecked")
             @Override
             public C call() throws Exception {
+                //尝试获取默认实现
                 return (C) capability.getDefaultCapability();
             }
         });
         ID_MAP.put(capability.getID(),capability);
     }
 
+    /**
+     * 在注册时调用这个，确保所有东西一次性加载
+     */
     public static void registerAllCapabilities(){
         Preconditions.checkState(Loader.instance().isInState(LoaderState.PREINITIALIZATION));
         for (EntityCapability<?,?,?> capability : LOADER_CAPABILITIES){
