@@ -7,7 +7,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 
 import javax.annotation.Nullable;
-
+@Deprecated
 public class StorageQiAndStrength implements Capability.IStorage<IQiAndStrength>{
     @Nullable
     @Override

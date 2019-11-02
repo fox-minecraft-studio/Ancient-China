@@ -7,6 +7,7 @@ import com.fox.ancientchina.core.api.capability.IQiAndStrength;
  * 这个值负责玩家的武技等提供基础
  * @author yaesey
  */
+@Deprecated
 public class CapabilityQiAndStrength implements IQiAndStrength{
     public static final CapabilityQiAndStrength INSTANCE = new CapabilityQiAndStrength();
 

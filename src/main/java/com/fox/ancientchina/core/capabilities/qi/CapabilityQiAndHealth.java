@@ -4,7 +4,7 @@ import com.fox.ancientchina.core.api.capability.IQiAndHealth;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
-
+@Deprecated
 public class CapabilityQiAndHealth implements IQiAndHealth {
     public static final CapabilityQiAndHealth INSTANCE = new CapabilityQiAndHealth();
 
