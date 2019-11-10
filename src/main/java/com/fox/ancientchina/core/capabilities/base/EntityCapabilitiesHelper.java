@@ -20,10 +20,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.Callable;
 
 /**
@@ -98,6 +95,17 @@ public class EntityCapabilitiesHelper {
         for (EntityCapability<?,?,?> capability : LOADER_CAPABILITIES){
             registerCapability(capability);
         }
+    }
+
+    /**
+     * @param id 还记得我们用{@link ResourceLocation}来管理capabilities吗
+     */
+    public static <E extends Entity> EntityCapability<?,?,E> getCapability(ResourceLocation id, E entity){
+        EntityCapability<?,?,?> capability = ID_MAP.get(id);
+        if (capability != null && entity.hasCapability(capability.getCapability(),null)){
+            return (EntityCapability<?,?,E>) entity.getCapability(capability.getCapability(),null);
+        }
+        return null;
     }
 
     //================以下为超级长的玩家事件，放心直到末尾都是==================
@@ -180,5 +188,43 @@ public class EntityCapabilitiesHelper {
             capabilities.add((EntityCapability<?, ?, E>)entity.getCapability(capability.getCapability(),null));
         }
         return capabilities;
+    }
+
+    private static void addTarcker(EntityPlayerMP watcher,Entity target){
+        List<EntityCapability<?,?,Entity>> entityCapabilities = getEntityCapabilities(target);
+        for (EntityCapability<?,?,Entity> capability : entityCapabilities){
+            List<EntityCapabilityTracker> trackers = TRACKER_MAP.get(watcher);
+            if (trackers.isEmpty()){
+                TRACKER_MAP.put(watcher,trackers = new ArrayList<EntityCapabilityTracker>());
+            }
+            EntityCapabilityTracker tracker = new EntityCapabilityTracker(capability,watcher);
+            trackers.add(tracker);
+            tracker.add();
+
+            capability.sendPacket(watcher);
+        }
+    }
+
+    private static void removeTarckers(EntityPlayerMP watcher,Entity target){
+        List<EntityCapabilityTracker> trackers = TRACKER_MAP.get(watcher);
+        if (trackers != null){
+            List<EntityCapability<?,?,Entity>> entityCapabilities = getEntityCapabilities(target);
+            for (EntityCapability<?,?,Entity> capability : entityCapabilities){
+                if (capability.getTrackingTime() >= 0){
+                    Iterator<EntityCapabilityTracker> iterable = trackers.iterator();
+                    while (iterable.hasNext()){
+                        EntityCapabilityTracker tracker = iterable.next();
+                        if (tracker.getCapability() == capability){
+                            iterable.remove();
+                            tracker.remove();
+                        }
+                    }
+                }
+            }
+            
+            if (trackers.isEmpty()){
+                TRACKER_MAP.remove(watcher);
+            }
+        }
     }
 }

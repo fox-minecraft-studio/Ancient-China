@@ -7,6 +7,11 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 import java.io.IOException;
 
+/**
+ * 本类是所有信息类基本
+ *
+ * Forge的网络通信机制需要提供信息类和信息处理类
+ */
 public abstract class ACMessageBase implements IMessage {
     /**必须含有一个无参构造函数*/
     public ACMessageBase(){ }
