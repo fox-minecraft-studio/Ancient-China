@@ -13,10 +13,14 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.LoaderState;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerChangedDimensionEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.Side;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -35,7 +39,7 @@ public class EntityCapabilitiesHelper {
     private static int updateTimer = 0;
 
     /**
-     * 注意：请使用这个注册能力！！！
+     * <b>注意：请使用这个来注册能力！！！</b>
      */
     public static <F extends EntityCapability<F, C, E>,C ,E extends Entity> void registerEntityCapability(EntityCapability<F,C,E> capability){
         //确保这个鬼东西真的是实体能力，而不是更可怕的东西
@@ -180,6 +184,92 @@ public class EntityCapabilitiesHelper {
         }
     }
 
+    @SubscribeEvent
+    public static void onPlayerJoin(EntityJoinWorldEvent event){
+        if (!event.getWorld().isRemote && event.getEntity() instanceof EntityPlayerMP){
+            EntityPlayerMP player = (EntityPlayerMP) event.getEntity();
+            addTrackers(player,player);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerChangeDimension(PlayerChangedDimensionEvent event){
+        if (!event.player.getEntityWorld().isRemote && event.player instanceof EntityPlayerMP){
+            EntityPlayerMP player = (EntityPlayerMP) event.player;
+            List<EntityCapabilityTracker> trackers = TRACKER_MAP.get(player);
+            if (trackers != null){
+                for (EntityCapabilityTracker tracker : trackers){
+                    tracker.getCapability().sendPacket(tracker.getWatcher());
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onEntityStartTracking(PlayerEvent.StartTracking event) {
+        if(event.getEntityPlayer() instanceof EntityPlayerMP) {
+            addTrackers((EntityPlayerMP)event.getEntityPlayer(), event.getTarget());
+        }
+    }
+
+    @SubscribeEvent
+    public static void onEntityStopTracking(PlayerEvent.StopTracking event) {
+        if(event.getEntityPlayer() instanceof EntityPlayerMP) {
+            removeTrackers((EntityPlayerMP)event.getEntityPlayer(), event.getTarget());
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerUpdate(TickEvent.PlayerTickEvent event){
+        if (!event.player.getEntityWorld().isRemote && event.side == Side.CLIENT){
+            EntityPlayerMP player = (EntityPlayerMP) event.player;
+            List<EntityCapabilityTracker> trackers = TRACKER_MAP.get(player);
+            if(trackers != null) {
+                Iterator<EntityCapabilityTracker> trackerIT = trackers.iterator();
+                while(trackerIT.hasNext()) {
+                    EntityCapabilityTracker tracker = trackerIT.next();
+                    //删除原版追踪器
+                    if(tracker.getCapability().getEntity() != player) {
+                        Set<? extends EntityPlayer> vanillaTrackingPlayers = player.getServerWorld().getEntityTracker().getTrackingPlayers(tracker.getCapability().getEntity());
+
+                        if(vanillaTrackingPlayers == null || vanillaTrackingPlayers.isEmpty() || !vanillaTrackingPlayers.contains(player)) {
+                            trackerIT.remove();
+                            tracker.remove();
+                        }
+                    }
+                    tracker.update();
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onServerTickEvent(TickEvent.ServerTickEvent event){
+        //什么，服务器结束了吗
+        if (event.phase == TickEvent.Phase.END){
+            updateTimer++;
+            if (updateTimer > 20){
+                updateTimer = 0;
+                Iterator<Map.Entry<EntityPlayerMP, List<EntityCapabilityTracker>>> it = TRACKER_MAP.entrySet().iterator();
+                while(it.hasNext()) {
+                    Map.Entry<EntityPlayerMP, List<EntityCapabilityTracker>> entry = it.next();
+                    EntityPlayerMP player = entry.getKey();
+
+                    System.out.println("请看" + entry.getValue().size() + " " + player.getServerWorld().loadedEntityList.size());
+
+                    if(player.getServerWorld().getMinecraftServer() != null && !player.getServerWorld().getMinecraftServer().getPlayerList().getPlayers().contains(player)) {
+                        it.remove();
+                        for(EntityCapabilityTracker tracker : entry.getValue()) {
+                            tracker.remove();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //下面是一些工具方法
+
     @SuppressWarnings("unchecked")
     private static <E extends Entity> List<EntityCapability<?, ?, E>> getEntityCapabilities(E entity){
         List<EntityCapability<?, ?, E>> capabilities = new ArrayList<EntityCapability<?, ?, E>>();
@@ -190,22 +280,25 @@ public class EntityCapabilitiesHelper {
         return capabilities;
     }
 
-    private static void addTarcker(EntityPlayerMP watcher,Entity target){
+    private static void addTrackers(EntityPlayerMP watcher, Entity target){
         List<EntityCapability<?,?,Entity>> entityCapabilities = getEntityCapabilities(target);
         for (EntityCapability<?,?,Entity> capability : entityCapabilities){
-            List<EntityCapabilityTracker> trackers = TRACKER_MAP.get(watcher);
-            if (trackers.isEmpty()){
-                TRACKER_MAP.put(watcher,trackers = new ArrayList<EntityCapabilityTracker>());
-            }
-            EntityCapabilityTracker tracker = new EntityCapabilityTracker(capability,watcher);
-            trackers.add(tracker);
-            tracker.add();
+            //fixme:此处易崩溃
+            if (capability.getTrackingTime() >= 0){
+                List<EntityCapabilityTracker> trackers = TRACKER_MAP.get(watcher);
+                if (trackers == null){
+                    TRACKER_MAP.put(watcher,trackers = new ArrayList<EntityCapabilityTracker>());
+                }
+                EntityCapabilityTracker tracker = new EntityCapabilityTracker(capability,watcher);
+                tracker.add();
+                trackers.add(tracker);
 
-            capability.sendPacket(watcher);
+                capability.sendPacket(watcher);
+            }
         }
     }
 
-    private static void removeTarckers(EntityPlayerMP watcher,Entity target){
+    private static void removeTrackers(EntityPlayerMP watcher, Entity target){
         List<EntityCapabilityTracker> trackers = TRACKER_MAP.get(watcher);
         if (trackers != null){
             List<EntityCapability<?,?,Entity>> entityCapabilities = getEntityCapabilities(target);
@@ -221,7 +314,7 @@ public class EntityCapabilitiesHelper {
                     }
                 }
             }
-            
+
             if (trackers.isEmpty()){
                 TRACKER_MAP.remove(watcher);
             }
