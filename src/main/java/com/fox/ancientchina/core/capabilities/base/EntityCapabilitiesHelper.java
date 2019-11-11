@@ -275,7 +275,9 @@ public class EntityCapabilitiesHelper {
         List<EntityCapability<?, ?, E>> capabilities = new ArrayList<EntityCapability<?, ?, E>>();
 
         for (EntityCapability<?, ?, ?> capability : LOADER_CAPABILITIES){
-            capabilities.add((EntityCapability<?, ?, E>)entity.getCapability(capability.getCapability(),null));
+            if (entity.hasCapability(capability.getCapability(),null)){
+                capabilities.add((EntityCapability<?, ?, E>)entity.getCapability(capability.getCapability(),null));
+            }
         }
         return capabilities;
     }
@@ -283,15 +285,14 @@ public class EntityCapabilitiesHelper {
     private static void addTrackers(EntityPlayerMP watcher, Entity target){
         List<EntityCapability<?,?,Entity>> entityCapabilities = getEntityCapabilities(target);
         for (EntityCapability<?,?,Entity> capability : entityCapabilities){
-            //fixme:此处易崩溃
             if (capability.getTrackingTime() >= 0){
                 List<EntityCapabilityTracker> trackers = TRACKER_MAP.get(watcher);
                 if (trackers == null){
                     TRACKER_MAP.put(watcher,trackers = new ArrayList<EntityCapabilityTracker>());
                 }
                 EntityCapabilityTracker tracker = new EntityCapabilityTracker(capability,watcher);
-                tracker.add();
                 trackers.add(tracker);
+                tracker.add();
 
                 capability.sendPacket(watcher);
             }
