@@ -1,11 +1,15 @@
 package com.fox.ancientchina.core.capabilities.base;
 
+import com.fox.ancientchina.core.AncientChinaCore;
 import com.fox.ancientchina.core.api.capability.ISerializableData;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fox.ancientchina.core.network.clientmessage.MessageEntityCapability;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 
 /**
@@ -111,5 +115,13 @@ public abstract class EntityCapability<F extends EntityCapability<F,C,E>,C,E ext
      */
     public void readTrackingDataFromNBT(NBTTagCompound nbt) {
 
+    }
+
+    /**
+     * 发送所有跟踪的数据
+     */
+    public void sendPacket(EntityPlayerMP player){
+        MessageEntityCapability message = new MessageEntityCapability(this);
+        AncientChinaCore.networkWrapper.sendTo(message,player);
     }
 }

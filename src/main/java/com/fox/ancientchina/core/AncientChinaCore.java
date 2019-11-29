@@ -11,6 +11,8 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import org.apache.logging.log4j.Logger;
 
 /**
@@ -22,6 +24,8 @@ public class AncientChinaCore
     public static final String MODID = "ancientchinacore";
     public static final String NAME = "Ancient China(Core)";
     public static final String VERSION = "0.0.1";
+
+    public static SimpleNetworkWrapper networkWrapper;
 
     @Instance(MODID)
     public static AncientChinaCore INSTANCE;
@@ -36,6 +40,9 @@ public class AncientChinaCore
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
         logger = event.getModLog();
+        //注册一个属于Mod的网络通信频道，日后所有通信全在这个之下
+        networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel(MODID);
+
         MinecraftForge.EVENT_BUS.register(EntityCapabilitiesHelper.class);
     }
 

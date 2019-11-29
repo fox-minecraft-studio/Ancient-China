@@ -31,6 +31,10 @@ public class EntityCapabilityTracker {
 
     /**
      * 对脏数据的处理标记
+     *
+     * 脏数据就是指玩家们在游戏中，
+     * 因为一些高ping战士等原因数据来不及被修改，就被调用，
+     * 此时数据我们称为“脏数据”
      */
     public void makeDirty(){
         this.dirty = true;
@@ -54,7 +58,7 @@ public class EntityCapabilityTracker {
         if (this.trackerReady && this.dirty){
             this.lastUpdate = 0;
             this.trackerReady = false;
-            //todo:这里应该添加capability的网络发包
+            this.capability.sendPacket(this.watcher);
             this.dirty = false;
         }
     }
