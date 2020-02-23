@@ -1,0 +1,24 @@
+itemGroup.ancientchinacof.tab_item=華夏畫卷(COF) 物品
+itemGroup.ancientchinacof.tab_block=華夏畫卷(COF) 方塊
+item.ancientchinacof.nya_apple.name=測試物品
+tile.ancientchinacof.nya_ore.name=測試方塊
+
+tile.ancientchinacore.copper_ore.name=銅礦
+tile.ancientchinacore.lead_ore.name=鉛礦
+tile.ancientchinacore.zinc_ore.name=鋅礦
+tile.ancientchinacore.tin_ore.name=錫礦
+tile.ancientchinacore.silver_ore.name=銀礦
+tile.ancientchinacore.cinnbar.name=朱砂
+tile.ancientchinacore.sulphur.name=硫磺
+tile.ancientchinacore.jade.name=玉石
+
+item.ancientchinacore.copper_ingot.name=銅錠
+item.ancientchinacore.lead_ingot.name=鉛錠
+item.ancientchinacore.zinc_ingot.name=鋅錠
+item.ancientchinacore.tin_ingot.name=錫錠
+item.ancientchinacore.cinnbar_powder.name=朱砂粉
+item.ancientchinacore.sulphur_powder.name=硫粉
+
+# Gui
+ac.gui.hud.health=氣血值:
+ac.gui.hud.strength=氣力值:
