@@ -1,7 +1,7 @@
 package com.fox.ancientchina.core.capabilities;
 
 import com.fox.ancientchina.core.AncientChinaCore;
-import com.fox.ancientchina.core.api.capability.ISerializableData;
+import com.fox.ancientchina.core.api.ISerializableData;
 import com.fox.ancientchina.core.api.capability.IWuXing;
 import com.fox.ancientchina.core.capabilities.base.EntityCapability;
 import com.fox.ancientchina.core.loader.CapabilitiesLoader;
