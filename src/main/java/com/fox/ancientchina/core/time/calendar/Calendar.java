@@ -1,8 +1,5 @@
 package com.fox.ancientchina.core.time.calendar;
 
-import com.fox.ancientchina.core.api.ISerializableData;
-import net.minecraft.nbt.NBTTagCompound;
-
 /**
  * 农历定义
  * @author yaesey
@@ -13,9 +10,10 @@ public class Calendar {
 
     private int month,day;
 
-    private boolean isNextMonthALeapMonth;
-    private boolean doesNextMonthHasTwoJieQi;
+    private boolean isNextMonthABigMonth = true;               //判断下个月是否为大月
+    private boolean doesNextMonthHasTwoJieQi = true;            //判断该月是否有两个中气
 
+    /** 2020.12.27，农历庚子年冬月初七，小月，冬至*/
     public static final Calendar BEGIN_CALENDAR = new Calendar(2020,12,7,7,1);
 
 
@@ -27,16 +25,58 @@ public class Calendar {
         this.day = day;
     }
 
-    public int getYear() {
-        return year;
-    }
-
     public String getYearString() {
         return nameOfStems[stem - 1] + nameOfBranches[branch - 1];
     }
 
     public String getShengXiao() {
         return nameOfShengXiao[branch - 1];
+    }
+
+    /**
+     * <b>注意：每次调用本方法，农历的状态会立即改变<b/>
+     */
+    public void updateCalendar() {
+        this.day = ++day;
+        if (this.day > getDaysOfThisMonth()){
+            this.day = 1;
+            this.month = ++month;
+            this.isNextMonthABigMonth = !isNextMonthABigMonth;
+        }
+        if (this.month > 12){
+            this.month = 1;
+            this.year = ++year;
+            this.stem = ++stem;
+            this.branch = ++branch;
+        }
+        if (this.stem > 12){
+            this.stem = 1;
+        }if (this.branch > 12){
+            this.branch = 1;
+        }
+    }
+
+    /**
+     * 给出这个月的天数
+     * @return
+     */
+    private int getDaysOfThisMonth() {
+        if (!isNextMonthABigMonth)
+            return 30;
+        else
+            return 29;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getDay() {
+        return day;
     }
 
     //天干
