@@ -1,6 +1,6 @@
 package com.fox.ancientchina.core.capabilities.base;
 
-import com.fox.ancientchina.core.api.capability.ISerializableData;
+import com.fox.ancientchina.core.api.ISerializableData;
 import com.google.common.base.Preconditions;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;

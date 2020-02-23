@@ -1,4 +1,4 @@
-package com.fox.ancientchina.core.api.capability;
+package com.fox.ancientchina.core.api;
 
 import net.minecraft.nbt.NBTTagCompound;
 

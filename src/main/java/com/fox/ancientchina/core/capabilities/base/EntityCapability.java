@@ -1,7 +1,7 @@
 package com.fox.ancientchina.core.capabilities.base;
 
 import com.fox.ancientchina.core.AncientChinaCore;
-import com.fox.ancientchina.core.api.capability.ISerializableData;
+import com.fox.ancientchina.core.api.ISerializableData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +53,7 @@ public abstract class EntityCapability<F extends EntityCapability<F,C,E>,C,E ext
     }
 
     /**
-     * 判断这个能力是否对玩家永久绑定，即是否有必要实现接口{@link com.fox.ancientchina.core.api.capability.ISerializableData}
+     * 判断这个能力是否对玩家永久绑定，即是否有必要实现接口{@link ISerializableData}
      */
     public boolean isPersistent(EntityPlayer oldPlayer,EntityPlayer newPlayer,boolean wasDead){
         return !wasDead;
