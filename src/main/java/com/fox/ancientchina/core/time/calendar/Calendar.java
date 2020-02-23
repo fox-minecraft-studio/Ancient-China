@@ -17,7 +17,7 @@ public class Calendar {
     public static final Calendar BEGIN_CALENDAR = new Calendar(2020,12,7,7,1);
 
 
-    public Calendar(int year,int month,int day,int stem,int branch) {
+    private Calendar(int year,int month,int day,int stem,int branch) {
         this.year = year;
         this.stem = stem;
         this.branch = branch;
