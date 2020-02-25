@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=dandelion": {
+      "model": "plants_soul:acorustatarinowii"
+    }
+  }
+}
