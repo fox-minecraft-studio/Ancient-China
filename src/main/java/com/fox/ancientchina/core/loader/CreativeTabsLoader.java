@@ -27,4 +27,5 @@ public class CreativeTabsLoader {
             return new ItemStack(BlockLoader.NYA_ORE);
         }
     });
+    public static CreativeTabs tabFMLTutor;
 }

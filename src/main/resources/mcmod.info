@@ -50,6 +50,22 @@
     "dependencies": []
   },
   {
+      "modid": "ancientchinaplantssoul",
+      "name": "Ancient China Plands Soul",
+      "description": "Plands's Soul!",
+      "version": "${version}",
+      "mcversion": "${mcversion}",
+      "url": "",
+      "updateUrl": "",
+      "authorList": [
+        "Gu_ZT"
+      ],
+      "credits": "cat",
+      "logoFile": "",
+      "screenshots": [],
+      "dependencies": []
+    },
+  {
     "modid": "ancientchinacia",
     "name": "Ancient China(Ancient China(Chemistry In Alchemy))",
     "description": "What is that?It is magic,alchemy or Chemistry?",

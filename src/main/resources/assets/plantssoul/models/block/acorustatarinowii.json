@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "plants_soul:blocks/acorus_tatarinowii",
+    "particle": "plants_soul:blocks/acorus_tatarinowii"
+  }
+}
