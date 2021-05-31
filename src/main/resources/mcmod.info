@@ -1,82 +1,14 @@
 [
   {
-    "modid": "ancientchinacore",
-    "name": "Ancient China(Core)",
-    "description": "A mod dedicated to creating a beautiful ancient Chinese scene\n\n.",
-    "version": "@version@",
-    "mcversion": "${mcversion}",
-    "url": "",
-    "updateUrl": "",
-    "authorList": [
-      "cyciling",
-      "ajacker",
-      "Jakob.zero"
-    ],
-    "credits": "lin jian tian, cat",
-    "logoFile": "",
-    "screenshots": [],
-    "dependencies": []
-  },
-  {
-    "modid": "ancientchinacof",
-    "name": "Ancient China(Change Of Fire)",
-    "description": "The change of fire!The amazing world!.",
+    "modid": "orientmyth",
+    "name": "Orientmyth",
+    "description": "Orientmyth is a mod which tell the mysterious oriental legends of long ago.",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "",
     "updateUrl": "",
-    "authorList": [
-      "ajacker"
-    ],
-    "credits": "lin jian tian, cat",
-    "logoFile": "",
-    "screenshots": [],
-    "dependencies": []
-  },
-  {
-    "modid": "ancientchinatensei",
-    "name": "Ancient China Tensei",
-    "description": "Tensei. weird stuff.",
-    "version": "${version}",
-    "mcversion": "${mcversion}",
-    "url": "",
-    "updateUrl": "",
-    "authorList": [
-      "cyciling"
-    ],
-    "credits": "cat",
-    "logoFile": "",
-    "screenshots": [],
-    "dependencies": []
-  },
-  {
-      "modid": "ancientchinaplantssoul",
-      "name": "Ancient China Plands Soul",
-      "description": "Plands's Soul!",
-      "version": "${version}",
-      "mcversion": "${mcversion}",
-      "url": "",
-      "updateUrl": "",
-      "authorList": [
-        "Gu_ZT"
-      ],
-      "credits": "cat",
-      "logoFile": "",
-      "screenshots": [],
-      "dependencies": []
-    },
-  {
-    "modid": "ancientchinacia",
-    "name": "Ancient China(Ancient China(Chemistry In Alchemy))",
-    "description": "What is that?It is magic,alchemy or Chemistry?",
-    "version": "${version}",
-    "mcversion": "${mcversion}",
-    "url": "",
-    "updateUrl": "",
-    "authorList": [
-      "yaesey"
-    ],
-    "credits": "lin jian tian, cat",
+    "authorList": ["cyciling", "ajacker", "yaesey", "Gu_ZT"],
+    "credits": "",
     "logoFile": "",
     "screenshots": [],
     "dependencies": []
