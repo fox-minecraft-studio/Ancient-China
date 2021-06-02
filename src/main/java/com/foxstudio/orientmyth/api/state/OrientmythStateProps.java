@@ -1,14 +1,18 @@
 package com.foxstudio.orientmyth.api.state;
 
-import com.foxstudio.orientmyth.api.state.enums.BlockOreVariant;
+import com.foxstudio.orientmyth.api.state.enums.BlockOreCoreVariant;
+import com.foxstudio.orientmyth.api.state.enums.BlockOrePlantSoulVariant;
 import net.minecraft.block.properties.PropertyEnum;
 
 /**
  * @author cyciling
  */
 public class OrientmythStateProps {
-    public static final PropertyEnum<BlockOreVariant>
-            ORE_VARIANT = PropertyEnum.create("variant", BlockOreVariant.class);
     public static final int
-            ORE_META = BlockOreVariant.values().length;
+            ORE_CORE_META = BlockOreCoreVariant.values().length,
+            ORE_PS_META = BlockOrePlantSoulVariant.values().length;
+    public static final PropertyEnum<BlockOreCoreVariant>
+            ORE_CORE_VARIANT = PropertyEnum.create("variant", BlockOreCoreVariant.class);
+    public static final PropertyEnum<BlockOrePlantSoulVariant>
+            ORE_PS_VARIANT = PropertyEnum.create("variant", BlockOrePlantSoulVariant.class);
 }

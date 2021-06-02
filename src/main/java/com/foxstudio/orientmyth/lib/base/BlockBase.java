@@ -1,11 +1,12 @@
 package com.foxstudio.orientmyth.lib.base;
 
 import com.foxstudio.orientmyth.Orientmyth;
-import com.foxstudio.orientmyth.OrientmythTab;
+import com.foxstudio.orientmyth.lib.BaseOrientmythTab;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -20,16 +21,17 @@ import java.util.List;
  * @author cyciling
  */
 public class BlockBase extends Block  {
-    public BlockBase(Material materialIn, String name) {
+    public BlockBase(Material materialIn, String name, CreativeTabs tab) {
         super(materialIn);
         this.setTranslationKey(name);
         this.setRegistryName(new ResourceLocation(Orientmyth.MOD_ID, name));
-        if(registerInCreative())
-            setCreativeTab(OrientmythTab.INSTANT);
+        if (tab != null){
+            this.setCreativeTab(this.registerInCreative(tab));
+        }
     }
 
-    private boolean registerInCreative() {
-        return true;
+    public CreativeTabs registerInCreative(CreativeTabs tab) {
+        return tab;
     }
 
     @Override
@@ -37,7 +39,9 @@ public class BlockBase extends Block  {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
             tooltip.add(I18n.format(Orientmyth.MOD_ID + stack.getTranslationKey() + ".info"));
-        } else tooltip.add(I18n.format(Orientmyth.MOD_ID + ".inventory.info"));
+        } else {
+            tooltip.add(I18n.format(Orientmyth.MOD_ID + ".inventory.info"));
+        }
     }
 
 }

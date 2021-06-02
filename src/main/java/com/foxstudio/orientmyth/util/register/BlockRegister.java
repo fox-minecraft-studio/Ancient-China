@@ -2,8 +2,10 @@ package com.foxstudio.orientmyth.util.register;
 
 import com.foxstudio.orientmyth.Orientmyth;
 import com.foxstudio.orientmyth.api.block.BlockMod;
-import com.foxstudio.orientmyth.block.BlockOre;
+import com.foxstudio.orientmyth.block.BlockCoreOre;
+import com.foxstudio.orientmyth.block.BlockPlantSoulOre;
 import com.foxstudio.orientmyth.util.ItemBlockWithMeta;
+import com.foxstudio.orientmyth.util.config.ConfigMod;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -23,7 +25,13 @@ public class BlockRegister {
     public static final List<Block> BLOCKS = new ArrayList<>();
 
     static {
-        BLOCKS.add(BlockMod.ORE = new BlockOre());
+        BLOCKS.add(BlockMod.ORE_CORE = new BlockCoreOre());
+    }
+
+    static {
+        if (ConfigMod.plantSoulEnable) {
+            BLOCKS.add(BlockMod.ORE_PS = new BlockPlantSoulOre());
+        }
     }
 
 

@@ -1,5 +1,6 @@
-package com.foxstudio.orientmyth;
+package com.foxstudio.orientmyth.lib;
 
+import com.foxstudio.orientmyth.Orientmyth;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -12,11 +13,25 @@ import javax.annotation.Nonnull;
 /**
  * @author cyciling
  */
-public abstract class OrientmythTab extends CreativeTabs {
-    public static CreativeTabs INSTANT;
+public abstract class BaseOrientmythTab extends CreativeTabs {
+    public static CreativeTabs CORE;
+    public static CreativeTabs PLANT_SOUL;
 
     public static void preInit(FMLPreInitializationEvent event){
-        INSTANT = (new OrientmythTab(Orientmyth.MOD_ID) {
+        CORE = (new BaseOrientmythTab(Orientmyth.MOD_ID + ".core") {
+            @Override
+            @Nonnull
+            @SideOnly(Side.CLIENT)
+            public ItemStack createIcon() {
+                return new ItemStack(Items.AIR);
+            }
+
+            @Override
+            public boolean hasSearchBar() {
+                return true;
+            }
+        }).setBackgroundImageName("item_search.png");
+        PLANT_SOUL = (new BaseOrientmythTab(Orientmyth.MOD_ID + "plantSoul") {
             @Override
             @Nonnull
             @SideOnly(Side.CLIENT)
@@ -31,7 +46,7 @@ public abstract class OrientmythTab extends CreativeTabs {
         }).setBackgroundImageName("item_search.png");
     }
 
-    public OrientmythTab(String label) {
+    public BaseOrientmythTab(String label) {
         super(label);
     }
 }

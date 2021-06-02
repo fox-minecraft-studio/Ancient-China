@@ -7,19 +7,15 @@ import java.util.Locale;
 /**
  * @author cyciling
  */
-
-public enum BlockOreVariant implements IStringSerializable {
-    COPPER,
-    LEAD,
-    ZINC,
-    TIN,
-    SILVER,
-    CINNABAR,
-    SULPHUR,
-    JADE;
+public enum BlockOrePlantSoulVariant implements IStringSerializable {
+    AMBER,
+    TALC,
+    ALUM,
+    CALCITE,
+    REALGAR;
 
     @Override
-    public java.lang.String getName() {
+    public String getName() {
         return name().toLowerCase(Locale.ROOT);
     }
 }

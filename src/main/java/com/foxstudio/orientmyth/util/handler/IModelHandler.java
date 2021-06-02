@@ -24,7 +24,7 @@ import java.util.Map;
  * @author cyciling
  */
 @Mod.EventBusSubscriber(value = Side.CLIENT, modid = Orientmyth.MOD_ID)
-public class IModelRegister {
+public class IModelHandler {
 
     private static final Map<IRegistryDelegate<Block>, IStateMapper> STATE_MAPPER =
             ReflectionHelper.getPrivateValue(ModelLoader.class, null, "customStateMappers");
@@ -50,6 +50,7 @@ public class IModelRegister {
 
     @SubscribeEvent
     public static void onMetaBlockItemModelRegister(ModelRegistryEvent event) {
-        for (int meta = 0; meta < OrientmythStateProps.ORE_META; meta++) { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockMod.ORE), meta, getMrlForState(BlockMod.ORE.getStateFromMeta(meta))); }
+        for (int meta = 0; meta < OrientmythStateProps.ORE_CORE_META; meta++) { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockMod.ORE_CORE), meta, getMrlForState(BlockMod.ORE_CORE.getStateFromMeta(meta))); }
+        for (int meta = 0; meta < OrientmythStateProps.ORE_PS_META; meta++) { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockMod.ORE_PS), meta, getMrlForState(BlockMod.ORE_PS.getStateFromMeta(meta))); }
     }
 }

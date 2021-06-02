@@ -1,4 +1,5 @@
-itemGroup.orientmyth=Orientmyth
+itemGroup.orientmyth.core=Orientmyth(Core)
+itemGroup.orientmyth.plantSoul=Orientmyth(Plant Soul)
 
 tile.orientmyth.ore0.name=Copper Ore
 tile.orientmyth.ore1.name=Lead Ore

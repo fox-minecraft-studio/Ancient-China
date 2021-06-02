@@ -1,13 +1,16 @@
 package com.foxstudio.orientmyth.proxy;
 
-import com.foxstudio.orientmyth.OrientmythTab;
+import com.foxstudio.orientmyth.lib.BaseOrientmythTab;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+/**
+ * @author cyciling
+ */
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
-        OrientmythTab.preInit(event);
+        BaseOrientmythTab.preInit(event);
     }
 
     public void init(FMLInitializationEvent event) {
