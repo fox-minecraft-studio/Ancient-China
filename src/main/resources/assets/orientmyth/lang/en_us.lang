@@ -1,0 +1,10 @@
+itemGroup.orientmyth=Orientmyth
+
+tile.orientmyth.ore0.name=Copper Ore
+tile.orientmyth.ore1.name=Lead Ore
+tile.orientmyth.ore2.name=Zinc Ore
+tile.orientmyth.ore3.name=Tin Ore
+tile.orientmyth.ore4.name=Silver Ore
+tile.orientmyth.ore5.name=Cinnabar Ore
+tile.orientmyth.ore6.name=Sulphur Ore
+tile.orientmyth.ore7.name=Jade Ore

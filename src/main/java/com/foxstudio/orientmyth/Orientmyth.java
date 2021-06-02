@@ -10,6 +10,9 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * @author cyciling
+ */
 @Mod(modid = Orientmyth.MOD_ID, name = Orientmyth.NAME, version = Orientmyth.VERSION, dependencies = Orientmyth.DEPENDENCIES)
 public class Orientmyth {
     public static final String MOD_ID = "orientmyth";
@@ -23,8 +26,8 @@ public class Orientmyth {
     @Mod.Instance(MOD_ID)
     public static Orientmyth INSTANCE;
 
-    @SidedProxy(clientSide = "com.foxstudio.orientmyth.proxy",
-            serverSide = "com.foxstudio.orientmyth.proxy")
+    @SidedProxy(clientSide = "com.foxstudio.orientmyth.proxy.CommonProxy",
+            serverSide = "com.foxstudio.orientmyth.proxy.ClientProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler
