@@ -8,6 +8,7 @@ import net.minecraftforge.common.config.Config;
  */
 @Config(modid = Orientmyth.MOD_ID)
 public class ConfigMod {
+    //TODO
     @Config.Comment("If true, the part of mod: plant,Herbal Medicine will add into game. [default: true]")
     public static boolean plantSoulEnable = true;
 

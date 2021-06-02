@@ -8,6 +8,8 @@ import net.minecraft.block.Block;
  * @author cyciling
  */
 public class BlockMod {
+    //TODO
+
     public static Block ORE_CORE = new BlockCoreOre();
     public static Block ORE_PS = new BlockPlantSoulOre();
 }
