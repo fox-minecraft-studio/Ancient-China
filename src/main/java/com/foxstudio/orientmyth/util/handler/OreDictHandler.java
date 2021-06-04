@@ -2,8 +2,8 @@ package com.foxstudio.orientmyth.util.handler;
 
 import com.foxstudio.orientmyth.Orientmyth;
 import com.foxstudio.orientmyth.api.block.BlockMod;
-import com.foxstudio.orientmyth.api.state.enums.BlockOreCoreVariant;
-import com.foxstudio.orientmyth.api.state.enums.BlockOrePlantSoulVariant;
+import com.foxstudio.orientmyth.api.state.enums.block.BlockOreCoreVariant;
+import com.foxstudio.orientmyth.api.state.enums.block.BlockOrePlantSoulVariant;
 import com.foxstudio.orientmyth.util.StringUntil;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;

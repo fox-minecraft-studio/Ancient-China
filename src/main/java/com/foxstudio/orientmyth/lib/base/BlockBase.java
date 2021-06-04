@@ -2,6 +2,7 @@ package com.foxstudio.orientmyth.lib.base;
 
 import com.foxstudio.orientmyth.Orientmyth;
 import com.foxstudio.orientmyth.lib.BaseOrientmythTab;
+import com.foxstudio.orientmyth.util.StringUntil;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.resources.I18n;
@@ -23,7 +24,7 @@ import java.util.List;
 public class BlockBase extends Block  {
     public BlockBase(Material materialIn, String name, CreativeTabs tab) {
         super(materialIn);
-        this.setTranslationKey(name);
+        this.setTranslationKey(StringUntil.toLowerCamelCase(name));
         this.setRegistryName(new ResourceLocation(Orientmyth.MOD_ID, name));
         if (tab != null){
             this.setCreativeTab(this.registerInCreative(tab));

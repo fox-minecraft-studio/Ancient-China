@@ -2,8 +2,11 @@ package com.foxstudio.orientmyth.util.handler;
 
 import com.foxstudio.orientmyth.Orientmyth;
 import com.foxstudio.orientmyth.api.block.BlockMod;
+import com.foxstudio.orientmyth.api.item.ItemMod;
 import com.foxstudio.orientmyth.api.state.OrientmythStateProps;
+import com.foxstudio.orientmyth.api.state.enums.item.ItemMaterialCore;
 import com.foxstudio.orientmyth.util.register.BlockRegister;
+import com.foxstudio.orientmyth.util.register.ItemRegister;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -18,13 +21,28 @@ import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.registries.IRegistryDelegate;
 
+import javax.annotation.Nonnull;
+import java.util.Arrays;
 import java.util.Map;
 
 /**
  * @author cyciling
  */
 @Mod.EventBusSubscriber(value = Side.CLIENT, modid = Orientmyth.MOD_ID)
-public class IModelHandler {
+public class ModelHandler {
+
+    @SubscribeEvent
+    public static void onItemModelRegister(ModelRegistryEvent event) {
+        for (int meta = 0; meta < ItemMaterialCore.values().length; meta++){
+            ModelLoader.setCustomModelResourceLocation(ItemMod.MATERIAL_CORE, meta, new ModelResourceLocation(ItemMaterialCore.values()[meta].name(), "inventory"));
+        }
+    }
+
+    @SubscribeEvent
+    public static void onMetaBlockItemModelRegister(ModelRegistryEvent event) {
+        for (int meta = 0; meta < OrientmythStateProps.ORE_CORE_META; meta++) { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockMod.ORE_CORE), meta, getMrlForState(BlockMod.ORE_CORE.getStateFromMeta(meta))); }
+        for (int meta = 0; meta < OrientmythStateProps.ORE_PS_META; meta++) { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockMod.ORE_PS), meta, getMrlForState(BlockMod.ORE_PS.getStateFromMeta(meta))); }
+    }
 
     private static final Map<IRegistryDelegate<Block>, IStateMapper> STATE_MAPPER =
             ReflectionHelper.getPrivateValue(ModelLoader.class, null, "customStateMappers");
@@ -46,11 +64,5 @@ public class IModelHandler {
                     getMrlForState(block.getStateFromMeta(0)));
         }
 
-    }
-
-    @SubscribeEvent
-    public static void onMetaBlockItemModelRegister(ModelRegistryEvent event) {
-        for (int meta = 0; meta < OrientmythStateProps.ORE_CORE_META; meta++) { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockMod.ORE_CORE), meta, getMrlForState(BlockMod.ORE_CORE.getStateFromMeta(meta))); }
-        for (int meta = 0; meta < OrientmythStateProps.ORE_PS_META; meta++) { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockMod.ORE_PS), meta, getMrlForState(BlockMod.ORE_PS.getStateFromMeta(meta))); }
     }
 }

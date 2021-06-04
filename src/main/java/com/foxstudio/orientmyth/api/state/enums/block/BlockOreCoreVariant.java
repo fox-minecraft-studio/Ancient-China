@@ -1,4 +1,4 @@
-package com.foxstudio.orientmyth.api.state.enums;
+package com.foxstudio.orientmyth.api.state.enums.block;
 
 import net.minecraft.util.IStringSerializable;
 

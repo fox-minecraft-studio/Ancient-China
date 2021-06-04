@@ -36,7 +36,9 @@ public class Orientmyth {
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
         logger = event.getModLog();
-        /*注册一个属于Mod的网络通信频道，日后所有通信全在这个之下*/
+        /*
+        * 注册一个属于Mod的网络通信频道，日后所有通信全在这个之下
+        * */
         networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel(MOD_ID);
 
     }

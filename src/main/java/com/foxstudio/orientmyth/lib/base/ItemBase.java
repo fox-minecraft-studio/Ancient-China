@@ -1,8 +1,10 @@
 package com.foxstudio.orientmyth.lib.base;
 
 import com.foxstudio.orientmyth.Orientmyth;
+import com.foxstudio.orientmyth.util.StringUntil;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -17,10 +19,17 @@ import java.util.List;
  * @author cyciling
  */
 public class ItemBase extends Item {
-    public ItemBase(int damage, int size) {
+    public ItemBase(int damage, int size, boolean subtype, CreativeTabs tab, String name) {
         this.setMaxDamage(damage);
-        this.setHasSubtypes(false);
+        this.setHasSubtypes(subtype);
         this.setMaxStackSize(size);
+        this.setRegistryName(Orientmyth.MOD_ID, name);
+        if (!subtype) {
+            this.setTranslationKey(Orientmyth.MOD_ID + "." + StringUntil.toLowerCamelCase(name));
+        }
+        if (tab != null) {
+            this.setCreativeTab(tab);
+        }
         if (damage == 0){
             this.setNoRepair();
         }

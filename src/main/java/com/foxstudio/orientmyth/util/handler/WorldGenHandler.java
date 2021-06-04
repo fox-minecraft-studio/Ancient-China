@@ -2,7 +2,6 @@ package com.foxstudio.orientmyth.util.handler;
 
 import com.foxstudio.orientmyth.api.block.BlockMod;
 import com.foxstudio.orientmyth.api.world.gen.WorldGenMod;
-import com.foxstudio.orientmyth.block.BlockCoreOre;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Biomes;
@@ -24,44 +23,44 @@ public class WorldGenHandler implements IWorldGenerator {
     public WorldGenHandler() {
         WorldGenMod.COPPER = new WorldGenMinable(
                 BlockMod.ORE_CORE.getStateFromMeta(0),
-                8, BlockMatcher.forBlock(Blocks.STONE));
+                8);
         WorldGenMod.LEAD = new WorldGenMinable(
                 BlockMod.ORE_CORE.getStateFromMeta(1),
-                6, BlockMatcher.forBlock(Blocks.STONE));
+                6);
         WorldGenMod.ZINC = new WorldGenMinable(
                 BlockMod.ORE_CORE.getStateFromMeta(2),
-                6, BlockMatcher.forBlock(Blocks.STONE));
+                6);
         WorldGenMod.TIN = new WorldGenMinable(
                 BlockMod.ORE_CORE.getStateFromMeta(3),
-                6, BlockMatcher.forBlock(Blocks.STONE));
+                6);
         WorldGenMod.SILVER = new WorldGenMinable(
                 BlockMod.ORE_CORE.getStateFromMeta(4),
-                4, BlockMatcher.forBlock(Blocks.STONE));
+                4);
         WorldGenMod.CINNABAR = new WorldGenMinable(
                 BlockMod.ORE_CORE.getStateFromMeta(5),
-                5, BlockMatcher.forBlock(Blocks.STONE));
+                5);
         WorldGenMod.SULPHUR = new WorldGenMinable(
                 BlockMod.ORE_CORE.getStateFromMeta(6),
-                10, BlockMatcher.forBlock(Blocks.STONE));
+                10);
         WorldGenMod.JADE = new WorldGenMinable(
                 BlockMod.ORE_CORE.getStateFromMeta(7),
-                4, BlockMatcher.forBlock(Blocks.SAND));
+                4, BlockMatcher.forBlock(Blocks.GRAVEL));
         WorldGenMod.SALTPETER = new WorldGenMinable(
                 BlockMod.ORE_CORE.getStateFromMeta(8),
-                16, BlockMatcher.forBlock(Blocks.STONE));
+                16);
     }
 
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         if (world.provider.getDimension() == 0) {
             worldGen(WorldGenMod.COPPER, world, random, chunkX, chunkZ, 16, 0, 100);
-            worldGen(WorldGenMod.LEAD, world, random, chunkX, chunkZ, 14, 0, 100);
+            worldGen(WorldGenMod.LEAD, world, random, chunkX, chunkZ, 14, 0, 50);
             worldGen(WorldGenMod.ZINC, world, random, chunkX, chunkZ, 12, 0, 100);
             worldGen(WorldGenMod.TIN, world, random, chunkX, chunkZ, 14, 0, 100);
             worldGen(WorldGenMod.SILVER, world, random, chunkX, chunkZ, 12, 0, 50);
             worldGen(WorldGenMod.CINNABAR, world, random, chunkX, chunkZ, 12, 0, 60);
-            worldGenSulphur(WorldGenMod.SULPHUR, world, random, chunkX, chunkZ, 32, 0, 100);
-            worldGenJade(WorldGenMod.JADE, world, random, chunkX, chunkZ, 16, 0, 100);
+            worldGenSulphur(WorldGenMod.SULPHUR, world, random, chunkX, chunkZ, 18, 0, 100);
+            worldGenJade(WorldGenMod.JADE, world, random, chunkX, chunkZ, 10, 50, 200);
             worldGen(WorldGenMod.SALTPETER, world, random, chunkX, chunkZ, 18, 0, 100);
 
         }
@@ -87,7 +86,7 @@ public class WorldGenHandler implements IWorldGenerator {
             int posY = minY + rand.nextInt(worldGenRegister(minY, maxY));
             int posZ = chunkZ * 16 + rand.nextInt(16);
             BlockPos blockPos = new BlockPos(posX, posY, posZ);
-            if(world.getBiome(blockPos) == Biomes.RIVER){
+            if(world.getBiome(blockPos) == Biomes.EXTREME_HILLS || world.getBiome(blockPos) == Biomes.EXTREME_HILLS_EDGE || world.getBiome(blockPos) == Biomes.EXTREME_HILLS){
                 gen.generate(world, rand, blockPos);
             }
         }

@@ -1,5 +1,7 @@
 package com.foxstudio.orientmyth.util.register;
 
+import com.foxstudio.orientmyth.api.item.ItemMod;
+import com.foxstudio.orientmyth.item.ItemMaterial;
 import net.minecraft.item.Item;
 
 import java.util.ArrayList;
@@ -10,4 +12,7 @@ import java.util.List;
  */
 public class ItemRegister {
     public static final List<Item> ITEMS = new ArrayList<>();
+    static {
+        ITEMS.add(ItemMod.MATERIAL_CORE = new ItemMaterial());
+    }
 }

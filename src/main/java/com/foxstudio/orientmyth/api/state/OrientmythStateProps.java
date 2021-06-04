@@ -1,7 +1,7 @@
 package com.foxstudio.orientmyth.api.state;
 
-import com.foxstudio.orientmyth.api.state.enums.BlockOreCoreVariant;
-import com.foxstudio.orientmyth.api.state.enums.BlockOrePlantSoulVariant;
+import com.foxstudio.orientmyth.api.state.enums.block.BlockOreCoreVariant;
+import com.foxstudio.orientmyth.api.state.enums.block.BlockOrePlantSoulVariant;
 import net.minecraft.block.properties.PropertyEnum;
 
 /**

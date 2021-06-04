@@ -1,4 +1,4 @@
-package com.foxstudio.orientmyth.api.state.enums;
+package com.foxstudio.orientmyth.api.state.enums.item;
 
 import net.minecraft.util.IStringSerializable;
 
@@ -7,12 +7,12 @@ import java.util.Locale;
 /**
  * @author cyciling
  */
-public enum BlockOrePlantSoulVariant implements IStringSerializable {
-    AMBER,
-    TALC,
-    ALUM,
-    CALCITE,
-    REALGAR;
+
+public enum ItemMaterialCore implements IStringSerializable {
+    INGOT_COPPER,
+    INGOT_TIN,
+    ORE_COPPER,
+    ;
 
     @Override
     public String getName() {

@@ -1,11 +1,13 @@
 package com.foxstudio.orientmyth.lib.base;
 
+import net.minecraft.creativetab.CreativeTabs;
+
 /**
  * @author cyciling
  */
 public class ItemToolBase extends ItemBase {
-    public ItemToolBase(String type, int damage, int level) {
-        super(damage, 1);
+    public ItemToolBase(String type, int level,int damage, int size, boolean subtype, CreativeTabs tab, String name) {
+        super(damage, size, subtype, tab, name);
         this.setHarvestLevel(type, level);
     }
     /*

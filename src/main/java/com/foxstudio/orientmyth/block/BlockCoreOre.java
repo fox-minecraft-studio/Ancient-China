@@ -1,18 +1,14 @@
 package com.foxstudio.orientmyth.block;
 
 import com.foxstudio.orientmyth.api.state.OrientmythStateProps;
-import com.foxstudio.orientmyth.api.state.enums.BlockOreCoreVariant;
+import com.foxstudio.orientmyth.api.state.enums.block.BlockOreCoreVariant;
 import com.foxstudio.orientmyth.api.block.BlockModName;
 import com.foxstudio.orientmyth.api.state.props.BlockOreCoreProp;
 import com.foxstudio.orientmyth.lib.BaseOrientmythTab;
 import com.foxstudio.orientmyth.lib.base.BlockMetaBase;
-import com.foxstudio.orientmyth.util.BlockMeta;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
 
 import javax.annotation.Nonnull;
 import java.util.Map;
@@ -20,14 +16,14 @@ import java.util.Map;
 /**
  * @author cyciling
  */
-public class BlockCoreOre extends BlockMetaBase implements BlockMeta {
+public class BlockCoreOre extends BlockMetaBase {
 
     public BlockCoreOre() {
         this(BlockModName.ORE_CORE);
     }
 
     public BlockCoreOre(String name) {
-        super(Material.ROCK, name, BaseOrientmythTab.CORE);
+        super(Material.ROCK, name, BaseOrientmythTab.CORE, OrientmythStateProps.ORE_CORE_META);
         this.setDefaultState(blockState.getBaseState()
                 .withProperty(OrientmythStateProps.ORE_CORE_VARIANT, BlockOreCoreVariant.COPPER));
         this.setHardness(3.0F);
@@ -36,6 +32,7 @@ public class BlockCoreOre extends BlockMetaBase implements BlockMeta {
             this.setHarvestLevel("pickaxe", prop.getValue(), prop.getKey());
         }
     }
+
     @Nonnull
     @Override
     public BlockStateContainer createBlockState() {
@@ -54,12 +51,5 @@ public class BlockCoreOre extends BlockMetaBase implements BlockMeta {
             meta = 0;
         }
         return getDefaultState().withProperty(OrientmythStateProps.ORE_CORE_VARIANT, BlockOreCoreVariant.values()[meta]);
-    }
-
-    @Override
-    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> stacks) {
-        for(int i = 0; i < OrientmythStateProps.ORE_CORE_META; i++) {
-            stacks.add(new ItemStack(this, 1, i));
-        }
     }
 }
