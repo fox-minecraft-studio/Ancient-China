@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 public class BlockMod {
     //TODO
 
-    public static Block ORE_CORE = new BlockCoreOre();
-    public static Block ORE_PS = new BlockPlantSoulOre();
+    public static Block
+            ORE_CORE = new BlockCoreOre(),
+            ORE_PS = new BlockPlantSoulOre();
 }

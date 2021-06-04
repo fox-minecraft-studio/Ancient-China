@@ -34,7 +34,6 @@ public class BlockRegister {
         }
     }
 
-
     @SubscribeEvent
     public static void registerBlock(RegistryEvent.Register<Block> e) {
         IForgeRegistry<Block> registry = e.getRegistry();

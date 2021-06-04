@@ -3,6 +3,7 @@ package com.foxstudio.orientmyth.block;
 import com.foxstudio.orientmyth.api.state.OrientmythStateProps;
 import com.foxstudio.orientmyth.api.state.enums.BlockOreCoreVariant;
 import com.foxstudio.orientmyth.api.block.BlockModName;
+import com.foxstudio.orientmyth.api.state.props.BlockOreCoreProp;
 import com.foxstudio.orientmyth.lib.BaseOrientmythTab;
 import com.foxstudio.orientmyth.lib.base.BlockMetaBase;
 import com.foxstudio.orientmyth.util.BlockMeta;
@@ -14,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 
 import javax.annotation.Nonnull;
+import java.util.Map;
 
 /**
  * @author cyciling
@@ -28,6 +30,11 @@ public class BlockCoreOre extends BlockMetaBase implements BlockMeta {
         super(Material.ROCK, name, BaseOrientmythTab.CORE);
         this.setDefaultState(blockState.getBaseState()
                 .withProperty(OrientmythStateProps.ORE_CORE_VARIANT, BlockOreCoreVariant.COPPER));
+        this.setHardness(3.0F);
+        this.setResistance(5.0F);
+        for (Map.Entry<IBlockState, Integer> prop : BlockOreCoreProp.ORE_CORE_PROP.entrySet()){
+            this.setHarvestLevel("pickaxe", prop.getValue(), prop.getKey());
+        }
     }
     @Nonnull
     @Override

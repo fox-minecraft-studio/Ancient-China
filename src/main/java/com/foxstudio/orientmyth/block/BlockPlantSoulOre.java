@@ -4,7 +4,6 @@ import com.foxstudio.orientmyth.api.block.BlockModName;
 import com.foxstudio.orientmyth.api.state.OrientmythStateProps;
 import com.foxstudio.orientmyth.api.state.enums.BlockOrePlantSoulVariant;
 import com.foxstudio.orientmyth.lib.BaseOrientmythTab;
-import com.foxstudio.orientmyth.lib.base.BlockBase;
 import com.foxstudio.orientmyth.lib.base.BlockMetaBase;
 import com.foxstudio.orientmyth.util.BlockMeta;
 import net.minecraft.block.material.Material;

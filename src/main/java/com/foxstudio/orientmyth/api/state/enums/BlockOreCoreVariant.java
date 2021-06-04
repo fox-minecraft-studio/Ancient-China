@@ -7,7 +7,6 @@ import java.util.Locale;
 /**
  * @author cyciling
  */
-
 public enum BlockOreCoreVariant implements IStringSerializable {
     COPPER,
     LEAD,
@@ -17,7 +16,7 @@ public enum BlockOreCoreVariant implements IStringSerializable {
     CINNABAR,
     SULPHUR,
     JADE,
-    SALTPETER,;
+    SALTPETER;
 
     @Override
     public String getName() {
