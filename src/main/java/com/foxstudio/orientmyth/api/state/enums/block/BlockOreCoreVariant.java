@@ -16,7 +16,8 @@ public enum BlockOreCoreVariant implements IStringSerializable {
     CINNABAR,
     SULPHUR,
     JADE,
-    SALTPETER;
+    SALTPETER,
+    BILE_ALUM;
 
     @Override
     public String getName() {

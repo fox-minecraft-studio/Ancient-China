@@ -8,7 +8,7 @@ import net.minecraft.block.Block;
  * @author cyciling
  */
 public class BlockMod {
-    //TODO
+    //TODO: BlockSet
 
     public static Block
             ORE_CORE = new BlockCoreOre(),

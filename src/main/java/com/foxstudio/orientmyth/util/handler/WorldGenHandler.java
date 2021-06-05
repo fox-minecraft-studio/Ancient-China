@@ -20,6 +20,7 @@ import java.util.Random;
  * @author cyciling
  */
 public class WorldGenHandler implements IWorldGenerator {
+    // TODO: 2021/6/4 WorldGen
     public WorldGenHandler() {
         WorldGenMod.COPPER = new WorldGenMinable(
                 BlockMod.ORE_CORE.getStateFromMeta(0),

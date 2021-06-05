@@ -10,9 +10,22 @@ import java.util.Locale;
 
 public enum ItemMaterialCore implements IStringSerializable {
     INGOT_COPPER,
+    INGOT_LEAD,
+    INGOT_ZINC,
     INGOT_TIN,
-    ORE_COPPER,
-    ;
+    NUGGET_COPPER,
+    NUGGET_LEAD,
+    NUGGET_ZINC,
+    NUGGET_TIN,
+    INGOT_SILVER,
+    RAW_CINNABAR,
+    RAW_SULPHUR,
+    RAW_JADE,
+    RAW_SALTPETER,
+    DUST_CINNABAR,
+    DUST_SULPHUR,
+    DUST_JADE,
+    DUST_SALTPETER;
 
     @Override
     public String getName() {

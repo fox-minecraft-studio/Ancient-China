@@ -11,6 +11,8 @@ import java.util.List;
  * @author cyciling
  */
 public class ItemRegister {
+    // TODO: 2021/6/4 ItemRegister
+
     public static final List<Item> ITEMS = new ArrayList<>();
     static {
         ITEMS.add(ItemMod.MATERIAL_CORE = new ItemMaterial());
