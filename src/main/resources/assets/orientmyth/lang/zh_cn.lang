@@ -1,10 +1,10 @@
 itemGroup.orientmyth.core=沐浴黎明(核心)
-itemGroup.orientmyth.plantSoul=沐浴黎明(草药)
+itemGroup.orientmyth.herbal=沐浴黎明(草药)
 
-tile.orientmyth.ore0.name=铜矿石
-tile.orientmyth.ore1.name=锌矿石
-tile.orientmyth.ore2.name=锡矿石
-tile.orientmyth.ore3.name=银矿石
-tile.orientmyth.ore4.name=朱砂矿石
-tile.orientmyth.ore5.name=硫磺矿石
-tile.orientmyth.ore6.name=玉石原石
+tile.orientmyth.oreCore0.name=铜矿石
+tile.orientmyth.oreCore1.name=锌矿石
+tile.orientmyth.oreCore2.name=锡矿石
+tile.orientmyth.oreCore3.name=银矿石
+tile.orientmyth.oreCore4.name=朱砂矿石
+tile.orientmyth.oreCore5.name=硫磺矿石
+tile.orientmyth.oreCore6.name=玉石原石

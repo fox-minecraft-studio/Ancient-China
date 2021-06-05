@@ -4,7 +4,7 @@ import com.foxstudio.orientmyth.Orientmyth;
 import com.foxstudio.orientmyth.api.block.BlockMod;
 import com.foxstudio.orientmyth.api.item.ItemMod;
 import com.foxstudio.orientmyth.api.state.OrientmythStateProps;
-import com.foxstudio.orientmyth.api.state.enums.item.ItemMaterialCore;
+import com.foxstudio.orientmyth.api.state.enums.item.ItemMaterialCoreEnum;
 import com.foxstudio.orientmyth.util.register.BlockRegister;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -30,8 +30,8 @@ public class ModelHandler {
 
     @SubscribeEvent
     public static void onItemModelRegister(ModelRegistryEvent event) {
-        for (int meta = 0; meta < ItemMaterialCore.values().length; meta++){
-            ModelLoader.setCustomModelResourceLocation(ItemMod.MATERIAL_CORE, meta, new ModelResourceLocation(ItemMaterialCore.values()[meta].name(), "inventory"));
+        for (int meta = 0; meta < ItemMaterialCoreEnum.values().length; meta++){
+            ModelLoader.setCustomModelResourceLocation(ItemMod.MATERIAL_CORE, meta, new ModelResourceLocation(ItemMaterialCoreEnum.values()[meta].name(), "inventory"));
         }
     }
 

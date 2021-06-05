@@ -8,7 +8,7 @@ import java.util.Locale;
  * @author cyciling
  */
 
-public enum ItemMaterialCore implements IStringSerializable {
+public enum ItemMaterialCoreEnum implements IStringSerializable {
     INGOT_COPPER,
     INGOT_LEAD,
     INGOT_ZINC,

@@ -28,11 +28,15 @@ public class ItemBase extends Item {
             this.setTranslationKey(Orientmyth.MOD_ID + "." + StringUntil.toLowerCamelCase(name));
         }
         if (tab != null) {
-            this.setCreativeTab(tab);
+            this.setCreativeTab(registerInCreative(tab));
         }
         if (damage == 0){
             this.setNoRepair();
         }
+    }
+
+    public CreativeTabs registerInCreative(CreativeTabs tab) {
+        return tab;
     }
 
     @Override

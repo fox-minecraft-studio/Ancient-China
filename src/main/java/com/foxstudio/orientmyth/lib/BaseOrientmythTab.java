@@ -1,6 +1,7 @@
 package com.foxstudio.orientmyth.lib;
 
 import com.foxstudio.orientmyth.Orientmyth;
+import com.foxstudio.orientmyth.api.block.BlockMod;
 import com.foxstudio.orientmyth.util.config.ConfigMod;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -24,7 +25,7 @@ public abstract class BaseOrientmythTab extends CreativeTabs {
             @Nonnull
             @SideOnly(Side.CLIENT)
             public ItemStack createIcon() {
-                return new ItemStack(Items.AIR);
+                return new ItemStack(BlockMod.ORE_CORE, 1, 0);
             }
 
             @Override
@@ -33,7 +34,7 @@ public abstract class BaseOrientmythTab extends CreativeTabs {
             }
         }).setBackgroundImageName("item_search.png");
         if(ConfigMod.herbalEnable){
-            PLANT_SOUL = (new BaseOrientmythTab(Orientmyth.MOD_ID + "plantSoul") {
+            PLANT_SOUL = (new BaseOrientmythTab(Orientmyth.MOD_ID + ".herbal") {
                 @Override
                 @Nonnull
                 @SideOnly(Side.CLIENT)
