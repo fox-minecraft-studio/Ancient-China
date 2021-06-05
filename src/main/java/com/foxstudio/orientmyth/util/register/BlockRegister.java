@@ -2,7 +2,7 @@ package com.foxstudio.orientmyth.util.register;
 
 import com.foxstudio.orientmyth.api.block.BlockMod;
 import com.foxstudio.orientmyth.block.BlockCoreOre;
-import com.foxstudio.orientmyth.block.BlockPlantSoulOre;
+import com.foxstudio.orientmyth.block.BlockHerbalOre;
 import com.foxstudio.orientmyth.util.config.ConfigMod;
 import net.minecraft.block.Block;
 
@@ -23,8 +23,8 @@ public class BlockRegister {
     }
 
     static {
-        if (ConfigMod.plantSoulEnable) {
-            BLOCKS.add(BlockMod.ORE_PS = new BlockPlantSoulOre());
+        if (ConfigMod.herbalEnable) {
+            BLOCKS.add(BlockMod.ORE_HERBAL = new BlockHerbalOre());
         }
     }
 }

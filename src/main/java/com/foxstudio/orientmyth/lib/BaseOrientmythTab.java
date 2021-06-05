@@ -32,7 +32,7 @@ public abstract class BaseOrientmythTab extends CreativeTabs {
                 return true;
             }
         }).setBackgroundImageName("item_search.png");
-        if(ConfigMod.plantSoulEnable){
+        if(ConfigMod.herbalEnable){
             PLANT_SOUL = (new BaseOrientmythTab(Orientmyth.MOD_ID + "plantSoul") {
                 @Override
                 @Nonnull

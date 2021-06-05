@@ -8,5 +8,5 @@ public class BlockModName {
 
     public static final String
             ORE_CORE = "ore_core",
-            ORE_PS = "ore_plant_soul";
+            ORE_PS = "ore_herbal";
 }

@@ -59,11 +59,13 @@ public class WorldGenHandler implements IWorldGenerator {
             worldGen(WorldGenMod.ZINC, world, random, chunkX, chunkZ, 12, 0, 100);
             worldGen(WorldGenMod.TIN, world, random, chunkX, chunkZ, 14, 0, 100);
             worldGen(WorldGenMod.SILVER, world, random, chunkX, chunkZ, 12, 0, 50);
-            worldGen(WorldGenMod.CINNABAR, world, random, chunkX, chunkZ, 12, 0, 60);
             worldGenSulphur(WorldGenMod.SULPHUR, world, random, chunkX, chunkZ, 18, 0, 100);
             worldGenJade(WorldGenMod.JADE, world, random, chunkX, chunkZ, 10, 50, 200);
             worldGen(WorldGenMod.SALTPETER, world, random, chunkX, chunkZ, 18, 0, 100);
 
+        }
+        if (world.provider.getDimension() == -1) {
+            worldGen(WorldGenMod.CINNABAR, world, random, chunkX, chunkZ, 12, 100, 256);
         }
     }
 

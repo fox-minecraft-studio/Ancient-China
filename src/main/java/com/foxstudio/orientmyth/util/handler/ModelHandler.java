@@ -6,7 +6,6 @@ import com.foxstudio.orientmyth.api.item.ItemMod;
 import com.foxstudio.orientmyth.api.state.OrientmythStateProps;
 import com.foxstudio.orientmyth.api.state.enums.item.ItemMaterialCore;
 import com.foxstudio.orientmyth.util.register.BlockRegister;
-import com.foxstudio.orientmyth.util.register.ItemRegister;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -21,8 +20,6 @@ import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.registries.IRegistryDelegate;
 
-import javax.annotation.Nonnull;
-import java.util.Arrays;
 import java.util.Map;
 
 /**
@@ -41,7 +38,7 @@ public class ModelHandler {
     @SubscribeEvent
     public static void onMetaBlockItemModelRegister(ModelRegistryEvent event) {
         for (int meta = 0; meta < OrientmythStateProps.ORE_CORE_META; meta++) { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockMod.ORE_CORE), meta, getMrlForState(BlockMod.ORE_CORE.getStateFromMeta(meta))); }
-        for (int meta = 0; meta < OrientmythStateProps.ORE_PS_META; meta++) { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockMod.ORE_PS), meta, getMrlForState(BlockMod.ORE_PS.getStateFromMeta(meta))); }
+        for (int meta = 0; meta < OrientmythStateProps.ORE_HERBAL_META; meta++) { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlockMod.ORE_HERBAL), meta, getMrlForState(BlockMod.ORE_HERBAL.getStateFromMeta(meta))); }
     }
 
     private static final Map<IRegistryDelegate<Block>, IStateMapper> STATE_MAPPER =

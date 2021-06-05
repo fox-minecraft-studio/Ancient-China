@@ -3,7 +3,7 @@ package com.foxstudio.orientmyth.util.handler;
 import com.foxstudio.orientmyth.Orientmyth;
 import com.foxstudio.orientmyth.api.block.BlockMod;
 import com.foxstudio.orientmyth.api.state.enums.block.BlockOreCoreVariant;
-import com.foxstudio.orientmyth.api.state.enums.block.BlockOrePlantSoulVariant;
+import com.foxstudio.orientmyth.api.state.enums.block.BlockOreHerbalVariant;
 import com.foxstudio.orientmyth.util.StringUntil;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
@@ -23,10 +23,10 @@ public class OreDictHandler {
                     StringUntil.toLowerCamelCase("ore_" + oreVariant.toString()),
                     new ItemStack(BlockMod.ORE_CORE, 1, oreVariant.ordinal()));
         }
-        for (BlockOrePlantSoulVariant oreVariant : BlockOrePlantSoulVariant.values()){
+        for (BlockOreHerbalVariant oreVariant : BlockOreHerbalVariant.values()){
             OreDictionary.registerOre(
                     StringUntil.toLowerCamelCase("ore_" + oreVariant.toString()),
-                    new ItemStack(BlockMod.ORE_PS, 1, oreVariant.ordinal()));
+                    new ItemStack(BlockMod.ORE_HERBAL, 1, oreVariant.ordinal()));
         }
     }
 }

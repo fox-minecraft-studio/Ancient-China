@@ -9,15 +9,13 @@ import java.util.Locale;
  */
 public enum BlockOreCoreVariant implements IStringSerializable {
     COPPER,
-    LEAD,
     ZINC,
     TIN,
     SILVER,
     CINNABAR,
     SULPHUR,
     JADE,
-    SALTPETER,
-    BILE_ALUM;
+    SALTPETER;
 
     @Override
     public String getName() {

@@ -11,6 +11,6 @@ public class ConfigMod {
     //TODO: Config
 
     @Config.Comment("If true, the part of mod: plant,Herbal Medicine will add into game. [default: true]")
-    public static boolean plantSoulEnable = true;
+    public static boolean herbalEnable = true;
 
 }

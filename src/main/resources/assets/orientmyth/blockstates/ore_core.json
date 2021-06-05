@@ -1,12 +1,12 @@
 {
   "variants": {
     "variant=copper": { "model": "orientmyth:ore_copper" },
-    "variant=lead": { "model": "orientmyth:ore_lead" },
     "variant=zinc": { "model": "orientmyth:ore_zinc" },
     "variant=tin": { "model": "orientmyth:ore_tin" },
-    "variant=silver": { "model": "orientmyth:ore_copper" },
-    "variant=cinnabar": { "model": "orientmyth:ore_copper" },
-    "variant=jade": { "model": "orientmyth:ore_copper" },
-    "variant=sulphur": { "model": "orientmyth:ore_copper" }
+    "variant=silver": { "model": "orientmyth:ore_silver" },
+    "variant=cinnabar": { "model": "orientmyth:ore_cinnabar" },
+    "variant=jade": { "model": "orientmyth:ore_jade" },
+    "variant=sulphur": { "model": "orientmyth:ore_sulphur" },
+    "variant=saltpeter": { "model": "orientmyth:ore_saltpeter" }
   }
 }

@@ -7,12 +7,13 @@ import java.util.Locale;
 /**
  * @author cyciling
  */
-public enum BlockOrePlantSoulVariant implements IStringSerializable {
+public enum BlockOreHerbalVariant implements IStringSerializable {
     AMBER,
     TALC,
     ALUM,
     CALCITE,
-    REALGAR;
+    REALGAR,
+    BILE_ALUM;
 
     @Override
     public String getName() {

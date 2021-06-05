@@ -1,7 +1,7 @@
 package com.foxstudio.orientmyth.api.block;
 
 import com.foxstudio.orientmyth.block.BlockCoreOre;
-import com.foxstudio.orientmyth.block.BlockPlantSoulOre;
+import com.foxstudio.orientmyth.block.BlockHerbalOre;
 import net.minecraft.block.Block;
 
 /**
@@ -12,5 +12,5 @@ public class BlockMod {
 
     public static Block
             ORE_CORE = new BlockCoreOre(),
-            ORE_PS = new BlockPlantSoulOre();
+            ORE_HERBAL = new BlockHerbalOre();
 }
